@@ -1,0 +1,157 @@
+%--------------------------------------------------------------
+% tesi.tex 
+%--------------------------------------------------------------
+% Corso di Laurea in Informatica 
+% http://if.dsi.unifi.it/
+% @Facolt\`a di Scienze Matematiche, Fisiche e Naturali
+% @Universit\`a degli Studi di Firenze
+%--------------------------------------------------------------
+% - template for the main file of Informatica@Unifi Thesis 
+% - based on Classic Thesis Style Copyright (C) 2008 
+%   Andr\'e Miede http://www.miede.de   
+%--------------------------------------------------------------
+
+\documentclass[twoside,openright,titlepage,fleqn,
+,	headinclude,12pt,a4paper,BCOR5mm,footinclude,table]{scrbook}
+%--------------------------------------------------------------
+\newcommand{\myItalianTitle}{Titolo In Italiano\xspace}
+\newcommand{\myEnglishTitle}{Title In English\xspace}
+% use the right myDegree option
+\newcommand{\myDegree}{Corso di Laurea in Informatica\xspace}
+%\newcommand{\myDegree}{
+	%Corso di Laurea Specialistica in Scienze e Tecnologie 
+	%dell'Informazione\xspace}
+\newcommand{\myName}{Yuri Bacciarini\xspace}
+\newcommand{\myProf}{Nome del Relatore\xspace}
+\newcommand{\myOtherProf}{Nome Cognome\xspace}
+\newcommand{\mySupervisor}{Nome Cognome\xspace}
+\newcommand{\myFaculty}{
+	Scuola di Scienze Matematiche, Fisiche e Naturali\xspace}
+\newcommand{\myUni}{\protect{
+	Universit\`a degli Studi di Firenze}\xspace}
+\newcommand{\myLocation}{Firenze\xspace}
+\newcommand{\myTime}{Anno Accademico 2016-2017\xspace}
+\newcommand{\myVersion}{Version 0.1\xspace}
+%--------------------------------------------------------------
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage[square,numbers]{natbib} 
+\usepackage[fleqn]{amsmath}  
+\usepackage{ellipsis}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{appendix}
+\usepackage{siunitx}
+\usepackage{url}
+
+%--------------------------------------------------------------
+\usepackage{dia-classicthesis-ldpkg}
+%--------------------------------------------------------------
+
+
+%
+% Options for classicthesis.sty:
+% tocaligned eulerchapternumbers drafting linedheaders 
+% listsseparated subfig nochapters beramono eulermath parts 
+% minionpro pdfspacing
+\usepackage[eulerchapternumbers,linedheaders,subfig,beramono,eulermath,
+parts]{classicthesis}
+%--------------------------------------------------------------
+\newlength{\abcd} % for ab..z string length calculation
+% how all the floats will be aligned
+\newcommand{\myfloatalign}{\centering} 
+\setlength{\extrarowheight}{3pt} % increase table row height
+\captionsetup{format=hang,font=small}
+%--------------------------------------------------------------
+% Layout setting
+%--------------------------------------------------------------
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	ignoremp,
+	bindingoffset = 1cm, 
+	textwidth     = 13.5cm,
+	textheight    = 21.5cm,
+	lmargin       = 3.5cm, % left margin
+	tmargin       = 4cm    % top margin 
+}
+
+
+
+
+%%
+%% Julia definition (c) 2014 Jubobs
+%%
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstset{%
+    language         = Julia,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+}
+%%%
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\tikzset{main node/.style={circle,fill=blue!20,draw,minimum size=1cm,inner sep=0pt},
+            }
+
+
+
+%--------------------------------------------------------------
+\begin{document}
+\frenchspacing
+\raggedbottom
+\pagenumbering{roman}
+\pagestyle{plain}
+%--------------------------------------------------------------
+% Frontmatter
+%--------------------------------------------------------------
+
+
+\include{titlePage}
+
+\pagestyle{scrheadings}
+%--------------------------------------------------------------
+% Mainmatter
+%--------------------------------------------------------------
+\pagenumbering{arabic}
+% use \cleardoublepage here to avoid problems with pdfbookmark
+%\include{intro} % use \myChapter command instead of \chapter
+%\cleardoublepage\myPart{Part I}
+%\include{chapter01}
+%\cleardoublepage\myPart{Part II}
+%\include{chapter02}
+%\include{chapter03}
+\tableofcontents
+\listoftables
+\listoffigures
+\include{Chapters/Chapter1}
+\include{Chapters/Chapter2}
+\include{Chapters/Chapter3}
+\include{Chapters/Chapter4}
+
+
+
+
+%--------------------------------------------------------------
+\end{document}
+%--------------------------------------------------------------
