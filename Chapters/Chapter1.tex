@@ -25,6 +25,10 @@ E’ questo un tipo di contesto non esplorato, al quale il progetto eServant pro
 La sperimentazione del progetto eServant si è svolta presso l’impianto universitario PIN a Prato nel mese di Dicembre 2018.
 \paragraph{}
 
+\includegraphics[scale=0.8]{img/cap1/eservant}\\
+
+\paragraph{}
+
 \section{Aziende coinvolte}
 
 \textbf{Quid Informatica spa}
@@ -47,9 +51,29 @@ Il dipartimento Ingegneria dell’informazione e Scienze Matematiche di Siena è
 \paragraph{}
 
 \section{Casi d'uso}
+\includegraphics[scale=0.5]{img/cap1/casidiuso}\\
+
 \section{Back-end}
+OSGI (Open Service Gateway Initiative) è una specifica che permette di costruire
+applicazioni modulari a componenti (detti “bundle”) e che introduce una
+programmazione Service Oriented, permettendo una separazione tra interfaccia ed
+implementazione molto più rigorosa di quella nativa Java.
+Il nucleo delle specifiche è un framework che definisce la gestione del modello del ciclo di vita del software, i moduli (chiamati bundle), un service registry e un ambiente di esecuzione. 
+L’aumento della complessità in un prodotto software, sia esso embedded, client o server, richiede codice modulare ma anche sistemi che siano estensibili dinamicamente, molto più in applicazioni tipo quelle di eSERVANT. Il framework OSGI implementa un modello a componenti completo e dinamico cioè quello che manca all’ambiente Java. 
+OSGi risolve molti dei problemi legati allo scarso supporto di Java nella modularità e nel dinamismo ed in tal senso OSGI è un framework che permette di fornire: 
+un sistema modulare per la piattaforma Java;
+un sistema dinamico, che consente l’installazione, l’avvio, lo stop e la
+rimozione dei moduli a runtime, senza quindi necessitare di riavvii;
+un sistema orientato ai servizi, i quali possono essere dinamicamente
+registrati ed utilizzati nella macchina virtuale Java .
+
+Per tutti i motivi indicati OSGI viene adottato all’interno dell’architettura di eSERVANT,
+come strumento per lo sviluppo delle applicazioni di backend di tutti i partner del
+progetto.
 
 \subsection{Microservizi}
+\includegraphics[scale=0.5]{img/cap1/architecture}\\
+
 \subsection{Swagger (API)}
 Swagger è un insieme di specifiche e di strumenti che mirano a semplificare e
 standardizzare i processi di documentazione di API per servizi web RESTful, il tutto su
@@ -117,8 +141,8 @@ MongoDB è un Database management System, orientato alla gestione dei testi che 
 Questo DBMS eredita il meccanismo di storage dal paradigma doc-oriented che consiste nel memorizzare ogni record come documento che possiede caratteristiche redeterminate può aggiungere qualsiasi numero di campi con una qualsiasi lunghezza.
 Nei doc-oriented si segue una metodologia differente rispetto al modello relazionale: si accorpano quanto più possibile gli oggetti, creando delle macro entità dal massimo contenuto informativo. Questi oggetti incorporano tutte le notizie di cui necessitano per una determinata semantica.
 Pertanto MongoDB non possiede uno schema e ogni documento non è strutturato, ha solo due chiavi obbligatorie:
-_id, che serve per identificare univocamente il documento (è comparabile,semanticamente, alla chiave primaria dei database relazionali)
-_rev, che viene utilizzata per la gestione delle revisioni, ad ogni operazione di modifica infatti la chiave rev viene aggiornata.
+id, che serve per identificare univocamente il documento (è comparabile,semanticamente, alla chiave primaria dei database relazionali)
+rev, che viene utilizzata per la gestione delle revisioni, ad ogni operazione di modifica infatti la chiave rev viene aggiornata.
 \paragraph{}
 
 Pertanto si può interrogare il DBMS anche per versioni del documento non recenti perché mantiene in memoria tutte le versioni.
@@ -178,15 +202,3 @@ eSERVANT, come strumento per il disegno delle interfacce sia su mobile (e quindi
 gli utenti/spettatori) che di tipo desktop (e quindi dedicate alla centrale di controllo e
 gestione).
 \paragraph{}
-
-
-
-\subsection{Linguaggi coinvolti}
-Front-end
-- Typescript
-
-Backend
-- Java
-
-Continuous Integration
-- Groovy
