@@ -36,13 +36,13 @@ raspbian avvia il servizio di ranging.
 La feature che distingue questi gateway è che sono programmati per chiamare un servizio HTTP custom 
 al quale, tramite metodo POST, vengono inviati la lista degli ibeacon in modalità advertising intercettati.
 
-Queste chiamate HTTP, ricevuta da un microservizio specializzato di eServant registrano che nella data
+Queste chiamate HTTP, ricevute da un microservizio specializzato di eServant, registrano che nella data
 di ricezione sono stati intercettati una serie di ibeacon con una determinata prossimità (BASSA,MEDIA,ALTA).
 
 Visto che i gateway hanno una posizione fissa all'interno dell'impianto, sono stati catalogati nel nostro
 database con le coordinate di installazione.
 Queste coordinate rappresenteranno la posizione dei dispositivi mobili (in modalità advertising) quando quest'ultimi
-verranno intercettati dal gateway attivo.
+vengono intercettati dal gateway attivo.
 
 \subsection{iBeacon passivi}
 Gli iBeacon passivi sono un'altro dispositivo standalone dotati di batteria e facilmente maneggevoli per
@@ -71,10 +71,11 @@ Il caso d'uso principale è permettere ai genitori di monitorare real-time la po
 figli all'interno di un impianto affollato.
 Al genitore, all'ingresso dell'impianto, verranno consegnati un braccialetto per ogni figlio.
 
-Nella sezione ricerca un minore dell'app eServant scansionerà il QRcode sopra il braccialetto e dal quel momento
+Nella sezione ricerca un minore dell'app eServant scansionerà il QRcode sopra il braccialetto e da quel momento
 in poi il suo utente sarà abilitato a monitorare l'ultima posizione rilevata di ogni singolo braccialetto.
 L'assegnazione dei braccialetti viene rilasciata in maniera spontanea all'uscita dall'impianto oppure 
-tramite un sistema automatico alcune ore dopo la fine dell'evento.
+tramite un sistema automatico alcune ore dopo la fine dell'evento (nel caso in cui il genitore non riconsegni
+i braccialetti).
 
 \begin{figure}[htp]
     \centering  
@@ -108,6 +109,6 @@ dalla porta della biblioteca dove è stato installato.
     \includegraphics[scale=0.2]{img/cap4/camera}
 \end{figure}
 
-Il conta persone scatena mantiene al suo interno un contatore delle persone attualmente dentro l'aula
+Il conta persone mantiene al suo interno un contatore delle persone attualmente dentro l'aula
 inviandole con cadenza di 5 minuti ad un microservizio specializzato di eServant che provvede ad
 aggiornare il dato sul database.

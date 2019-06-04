@@ -107,16 +107,16 @@ SASS come a un linguaggio di estensione del foglio di stile perché estende le c
 vantaggi di un linguaggio di programmazione di base. Quindi SASS compilerà il codice e genererà l'output CSS che un
 browser può comprendere.
 
-Vediamo alcune funzioni SASS nel dettaglio:
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
 
-\begin{multicols}{2}
-    Column 1
-    \columnbreak
-    Column 2
-    \end{multicols}
-    
+Vediamo alcune funzioni SASS in confronto con CSS puro:\\
+
 \textit{Variabili}
-\begin{lstlisting}
+\begin{multicols}{2}
+    \begin{lstlisting}
 // SASS
 $font-stack:    Helvetica, sans-serif
 $primary-color: #333
@@ -124,23 +124,28 @@ $primary-color: #333
 body
     font: 100% $font-stack
     color: $primary-color
-
+    \end{lstlisting}
+    \columnbreak
+    \begin{lstlisting}
 // CSS
 body {
     font: 100% Helvetica, sans-serif;
     color: #333;
 } 
-\end{lstlisting}
-VS
-\begin{lstlisting}
 
-\end{lstlisting}
-    
+.
+    \end{lstlisting}
+\end{multicols}
+
+\begin{multicols}{2}
+    \columnbreak
+\end{multicols}
 
 
 \textit{Mixin}
 
-\begin{lstlisting}
+\begin{multicols}{2}
+    \begin{lstlisting}
 // SASS
 @mixin transform($property) 
     -webkit-transform: $property
@@ -149,46 +154,72 @@ VS
 
 .box
     @include transform(rotate(30deg))   
-\end{lstlisting}
-VS
-\begin{lstlisting}
+    \end{lstlisting}
+    \columnbreak
+    \begin{lstlisting}
 // CSS
 .box {
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
 }
-\end{lstlisting}
+
+.
+    \end{lstlisting}
+\end{multicols}
+
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
 
 \textit{Loop}
-\begin{lstlisting}
+
+
+\begin{multicols}{2}
+    \begin{lstlisting}
 // SASS
 $class-slug: for !default
 
 @for $i from 1 through 4
     .#{$class-slug}-#{$i}
     width: 60px + $i
-\end{lstlisting}
-VS
-\begin{lstlisting}
+
+
+
+
+
+
+
+
+
+    .
+    \end{lstlisting}
+
+    \columnbreak
+    \begin{lstlisting}
 // CSS
 .for-1 {
-  width: 61px;
+    width: 61px;
 }
 
 .for-2 {
-  width: 62px;
+    width: 62px;
 }
 
 .for-3 {
-  width: 63px;
+    width: 63px;
 }
 
 .for-4 {
-  width: 64px;
+    width: 64px;
 }
-\end{lstlisting}
-      
+    \end{lstlisting}   
+\end{multicols}
+   
 
 \subsection{NgRx gestore stato}
 \paragraph{}
@@ -213,19 +244,21 @@ Lo scopo principale di questo pattern è fornire uno stato dell'applicazione pre
 
 \paragraph{}
 \begin{figure}[h!]
+    \centering  
     \caption{NgRx flow}
-    \includegraphics[scale=0.3]{img/cap2/ngrx}
+    \includegraphics[scale=0.4]{img/cap2/ngrx}
 \end{figure}
 \paragraph{}
 
 \begin{figure}[h!]
+    \centering  
     \caption{Without NgRx}
     \includegraphics[scale=0.5]{img/cap2/without-ngrx}
 \end{figure}
 \paragraph{}
 
 \begin{figure}[h!]
-    \caption{Case study su eServant}
+    \centering  
     \includegraphics[scale=0.2]{img/cap2/ngrx-eservant}
 \end{figure}
 
@@ -243,25 +276,32 @@ L'autenticazione verso i social network sopra citati avviene tramite protocollo 
 Il framework di autorizzazione OAuth 2.0 abilita un'applicazione di terze parti a ottenere un accesso limitato a un servizio HTTP, attivo
 per conto di un proprietario di risorse orchestrando un'inerazione di approvazione tra il proprietario della risorsa e il servizio HTTP.
 Questa specifica sostituisce e obsoleta il protocollo OAuth 1.0 descritto in RFC 5849.
+\paragraph{}
+\paragraph{}
+\paragraph{}
 
 OAuth 2.0 flow 
 
-\includegraphics[scale=0.60]{img/cap2/oauth20-1}\\
+\begin{figure}[h!]
+    \centering  
+    \includegraphics[scale=0.60]{img/cap2/oauth20-1}
+\end{figure}
+
+\paragraph{}
 
 \textbf{Attori}
 
-\textit{resource owner}: un'entità in grado di approvare l'accesso a una risorsa protetta.
-
-\textit{authorization server}: il server che invia i token di accesso al client dopo essere stato autorizzato
+\begin{itemize}
+\item \textit{resource owner}: un'entità in grado di approvare l'accesso a una risorsa protetta.
+\item \textit{authorization server}: il server che invia i token di accesso al client dopo essere stato autorizzato
 dal resource owner
-
-\textit{resource server}: il server che ospita le risorse protette. Il resource Server è in grado di accettare
+\item \textit{resource server}: il server che ospita le risorse protette. Il resource Server è in grado di accettare
 e rispondere alle richieste di risorse protette utilizzando i token di accesso.
-
-\textit{client}: un'applicazione che fa richieste di risorse protette per conto di
+\item \textit{client}: un'applicazione che fa richieste di risorse protette per conto di
 proprietario di risorse e con la sua autorizzazione. Il termine "client"
 non implica particolari caratsteristiche di implementazione (l'applicazione può essere eseguita
 su un server, un client web o altri dispositivi).
+\end{itemize}
 
 
 \section{Navigazione impianto}
@@ -269,10 +309,10 @@ Grazie alla collaborazione con il MICC di Firenze siamo riusciti ad integrare un
 per permettere ai partecipanti di eventi la navigazione verso un determinato POI (point of interest) partendo
 dall'ultima posizione rilevata del partecipante.
 
-Il nostro compito si è suddiviso in due parti:
+Il nostro compito si è suddiviso in tre parti:
 \begin{itemize}
-\item Creazione livelli da applicare alle mappe OSM per la navigazione interna.
-\item Integrazione delle mappe sia sull'APP Ionic che sul backoffice web.
+\item Creazione livelli da applicare alle mappe OSM per la navigazione interna
+\item Integrazione delle mappe sia sull'APP Ionic che sul backoffice web
 \item Recupero ultima posizione dell'utente
 \end{itemize}
 
@@ -285,16 +325,12 @@ Frammento di codice:
 
 \paragraph{}
 
-\begin{figure}[h!]
-    \caption{Selezione POI}
-    \includegraphics[scale=0.2]{img/cap2/maps-1}
+\begin{figure}[htp]
+    \centering  
+    \subfloat[Selezione POI]{\includegraphics[scale=0.5]{img/cap2/maps-1}}
+    \subfloat[Avvio navigazione verso il POI]{\includegraphics[scale=0.5]{img/cap2/maps-2}}
 \end{figure}
-\paragraph{}
 
-\begin{figure}[h!]
-    \caption{Avvio navigazione verso il POI}
-    \includegraphics[scale=0.2]{img/cap2/maps-2}
-\end{figure}
 
 \section{Geolocalizzazione}
 Come ho detto nella sezione precedente, la navigazione all'interno dell'impianto necessità la posizione iniziale
@@ -472,8 +508,8 @@ Vediamo nel caso specifico di eServant.
 
 \begin{figure}[htp]
     \centering  
-    \subfloat[Domanda]{\includegraphics[scale=0.3]{img/cap2/chatbot-1}}
-    \subfloat[Risposta]{\includegraphics[scale=0.3]{img/cap2/chatbot-2}}
+    \subfloat[Domanda]{\includegraphics[scale=0.5]{img/cap2/chatbot-1}}
+    \subfloat[Risposta]{\includegraphics[scale=0.5]{img/cap2/chatbot-2}}
 \end{figure}
 
 \textit{Vorrei \textcolor{green}{raggiungere il punto di interesse} \textcolor{purple}{Aula Magna}}\\
