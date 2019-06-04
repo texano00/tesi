@@ -1,19 +1,24 @@
 \chapter{Applicazione mobile}
-\includegraphics[scale=0.15]{img/cap2/1}\\
-\includegraphics[scale=0.15]{img/cap2/2}\\
 
+\begin{figure}[htp]
+    \centering  
+    \subfloat[Login]{\includegraphics[scale=0.15]{img/cap2/1}}
+    \subfloat[Home]{\includegraphics[scale=0.15]{img/cap2/2}}
+\end{figure}
+
+\paragraph{}
 L’interfaccia della piattaforma eSERVANT verso gli utenti finali è come da progetto una APP per mobile.
 Per questo insieme a Sintra Consulting s.r.l. siamo andati a disegnare in modo molto avanzato tutte le interfacce andando a quadrare requisiti di sistema/casi di uso con mockup montati all’interno di una vera e proprio demo dell’APP finale attesa.
 Tale strumento ci ha permesso di valutare non solo la user experience degli utenti, ma anche di poter fornire agli sviluppatori uno strumento specifico sul quale andare a traguardare la loro attività.
-Tutte le slide sono state montate e condivise tra tutti i partner del progetto all’indirizzo https://share.proto.io/U2B8EV/, anche se per motivi di praticità non sono state sviluppate tutte le articolazioni della stessa, ma solo le funzioni di maggior impatto e complessità.
+
 Il prototipo di APP è quindi stato creato andando a realizzare slide sui cinque temi di fondo:
 \begin{itemize}
-\item presentazione e riconoscimento;
-\item gestione evento e socialità;
-\item gestione delle funzioni di aiuto;
-\item gestione delle funzioni di mobilità;
-\item gestione delle funzioni di navigabilità e mappe;
-\item gestione del proprio profilo.
+\item presentazione e riconoscimento
+\item gestione evento e socialità
+\item gestione delle funzioni di aiuto
+\item gestione delle funzioni di mobilità
+\item gestione delle funzioni di navigabilità e mappe
+\item gestione del proprio profilo
 \end{itemize}
 
 \section{Framework Ionic}
@@ -33,23 +38,16 @@ Elementi positivi emersi sviluppando in Ionic:
 \begin{itemize}
     \item essendo tra i più famosi web framework, la \textbf{velocità di sviluppo} è un aspetto caratterizzante di Ionic
     \item \textbf{semplice} da capire
-    \item supporta il \textbf{live reload} permettendo così al developer di vedere immediatamente le modifiche direttamente sul dispositivo mobile.
+    \item supporta il \textbf{live reload} permettendo così al developer di vedere immediatamente le modifiche direttamente sul dispositivo mobile
 \end{itemize}
     
 Elementi negativi emersi:
 \begin{itemize}
-    \item l'accesso alle funzioni native tramite Cordova è \textbf{limitato}. Non è assolutamente paragonabile alle API native dell'OS.abilità e mappe;
-    \item \textbf{instabilità} nell'accesso nativo. Generalmente le librerie Cordova non sono allineate con le ultime API rilasciate da Android/IOS.
+    \item l'accesso alle funzioni native tramite Cordova è \textbf{limitato}. Non è assolutamente paragonabile alle API native dell'OS
+    \item \textbf{instabilità} nell'accesso nativo. Generalmente le librerie Cordova non sono allineate con le ultime API rilasciate da Android/IOS
 \end{itemize}
 
 La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e SASS. Ciò consente la creazione di applicazioni mobili ricche di funzionalità che utilizzano esclusivamente tecnologie web.
-\paragraph{}
-\textbf{Angular}
-
-Angular è un framework web open source creato da Google ed è il successore di AngularJS (primissima versione).
-Angular permette ai developer di costruire applicazione fruite nel web, su piattaforme mobile o desktop. 
-Angular capisce solo TypeScript dato che il framework è stato proprio scritto in Typescript. 
-
 \paragraph{}
 \textbf{Cordova}\\
 \textit{Apache Cordova, ex-PhoneGap e futuro Capacitor}
@@ -99,18 +97,24 @@ Vediamo come in 16 linee di codice siamo riusciti a raggiungere il seguente risu
 
 Scrivere CSS (Cascading Style Sheets) è fondamentale per descrivere in modo efficace il modo in cui gli elementi HTML devono 
 essere visualizzati su una pagina Web per definire stili, design, layout e tutto ciò che è necessario per creare un sito 
-Web sbalorditivo. Ma quando inizi a lavorare con siti grandi e complessi, potresti iniziare a chiedermi se i CSS potrebbero 
+Web sbalorditivo. Ma quando inizi a lavorare con siti grandi e complessi, potresti iniziare a chiederti se i CSS potrebbero 
 essere migliori. 
 
 In questi casi entra in gioco SASS (Syntacticly Awesome Stylesheets).
 SASS è un pre-processore CSS che consente di utilizzare variabili, operazioni matematiche, mixin, loop, funzioni, importazioni 
 e altre funzionalità interessanti che rendono la scrittura CSS molto più potente. In un certo senso, si potrebbe pensare a 
 SASS come a un linguaggio di estensione del foglio di stile perché estende le caratteristiche CSS standard introducendo i
-vantaggi di un linguaggio di programmazione di base. Quindi SASS compilerà il tuo codice e genererà l'output CSS che un
+vantaggi di un linguaggio di programmazione di base. Quindi SASS compilerà il codice e genererà l'output CSS che un
 browser può comprendere.
 
-Vediamo alcune funzioni nel dettaglio:
+Vediamo alcune funzioni SASS nel dettaglio:
 
+\begin{multicols}{2}
+    Column 1
+    \columnbreak
+    Column 2
+    \end{multicols}
+    
 \textit{Variabili}
 \begin{lstlisting}
 // SASS
@@ -120,14 +124,16 @@ $primary-color: #333
 body
     font: 100% $font-stack
     color: $primary-color
-\end{lstlisting}
-VS
-\begin{lstlisting}
+
 // CSS
 body {
     font: 100% Helvetica, sans-serif;
     color: #333;
 } 
+\end{lstlisting}
+VS
+\begin{lstlisting}
+
 \end{lstlisting}
     
 

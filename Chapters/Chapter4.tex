@@ -1,28 +1,113 @@
 \chapter{IoT}
-panoramica dei dispositivi IoT di eServant.
+Il progetto eServant include al suo interno 3 principali tecnologie che rientrano nella categoria
+"Internet Of Things"; dispositivi edge situati direttamente negli impianti che permettono di monitorare
+l'impianto e geolocalizzare i partecipanti dove il GPS ha dei grandi limiti.
+
+Scendendo nel dettaglio, l'impianto PIN di Prato è stato attrezzato con una serie di dispositivi BLE 
+(Bluetooth Low Energy) per intercettare i dispositivi mobili dei partecipanti e con un conta persone
+situato all'ingresso della biblioteca.
 
 \section{Bluetooth Low Energy}
+I dispositivi BLE possono operare in modalità attiva o in modalità passiva, rispettivamente esistono
+le seguenti due modalità:
+\begin{itemize}
+    \item ranging
+    \item advertising
+\end{itemize}
+
+
 \subsection{Gateway}
-cos'è
-a cosa serve
-come ci interagiamo
-agisce sia in ranging che advertising
+I Gateway posizionati negli ingressi principali sono stati realizzati tramite single board computer 
+Raspberry.
+\begin{figure}[H]
+    \centering  
+    \includegraphics[scale=0.4]{img/cap4/gateway}
+\end{figure}
 
-\subsection{Smartphone}
-agisce in ranging/advertising
+Le principali componenti usate sono:
+\begin{itemize}
+    \item scheda di rete wireless
+    \item chip Bluetooth versione 5
+    \item PoE (Power over Ethernet)
+\end{itemize}
 
-\subsection{iBeacon Box}
-agisce da advertising
+I gateway forniti dall'azienda BlueUp hanno al loro interno già un firmware che all'avvio del sistema operativo
+raspbian avvia il servizio di ranging.
+La feature che distingue questi gateway è che sono programmati per chiamare un servizio HTTP custom 
+al quale, tramite metodo POST, vengono inviati la lista degli ibeacon in modalità advertising intercettati.
+
+Queste chiamate HTTP, ricevuta da un microservizio specializzato di eServant registrano che nella data
+di ricezione sono stati intercettati una serie di ibeacon con una determinata prossimità (BASSA,MEDIA,ALTA).
+
+Visto che i gateway hanno una posizione fissa all'interno dell'impianto, sono stati catalogati nel nostro
+database con le coordinate di installazione.
+Queste coordinate rappresenteranno la posizione dei dispositivi mobili (in modalità advertising) quando quest'ultimi
+verranno intercettati dal gateway attivo.
+
+\subsection{iBeacon passivi}
+Gli iBeacon passivi sono un'altro dispositivo standalone dotati di batteria e facilmente maneggevoli per
+geolocalizzare un dispositivo all'interno di uno spazio indoor.
+Rispetto ai gateway attivi hanno il vantaggio di essere molto più economici (5 volte meno) e di essere
+dotati di batterie al litio.
+
+Gli smartphone con eServant installata (in modalità attiva o in background), potranno intercettare
+questi dispositivi ed inviare tramite HTTP al microservizio specializzato l'ID dell'ibeacon rilevato
+per permettere di geolocalizzare il partecipante nelle coordinate dell'ibeacon storicizzate nel nostro
+database.
+
+\begin{figure}[H]
+    \centering  
+    \includegraphics[scale=0.4]{img/cap4/ibeacon-advertising}
+\end{figure}
 
 \subsection{iBeacon Wearable}
-agisce da advertising
+\begin{figure}[H]
+    \centering  
+    \includegraphics[scale=0.4]{img/cap4/wearable}
+\end{figure}
+I braccialetti BLE svolgono l'esatto compito degli iBeacon passivi sopra descritti ma vengono utilizzati
+con una strategia diversa all'interno di eServant.
+Il caso d'uso principale è permettere ai genitori di monitorare real-time la posizione dei propri
+figli all'interno di un impianto affollato.
+Al genitore, all'ingresso dell'impianto, verranno consegnati un braccialetto per ogni figlio.
+
+Nella sezione ricerca un minore dell'app eServant scansionerà il QRcode sopra il braccialetto e dal quel momento
+in poi il suo utente sarà abilitato a monitorare l'ultima posizione rilevata di ogni singolo braccialetto.
+L'assegnazione dei braccialetti viene rilasciata in maniera spontanea all'uscita dall'impianto oppure 
+tramite un sistema automatico alcune ore dopo la fine dell'evento.
+
+\begin{figure}[htp]
+    \centering  
+    \subfloat[Scanner]{\includegraphics[scale=0.3]{img/cap4/wearable-1}}
+    \subfloat[Nome]{\includegraphics[scale=0.3]{img/cap4/wearable-2}}
+    \subfloat[Braccialetti registrati]{\includegraphics[scale=0.3]{img/cap4/wearable-3}}
+    \subfloat[Geolocalizzazione]{\includegraphics[scale=0.3]{img/cap4/wearable-4}}
+
+\end{figure}
+
+\subsection{Smartphone}
+Gli smarthone dei partecipanti agli eventi, tramite l'app di eServant attiva o in background, agiscono
+sia in modalità advertising per essere intercettati da eventuali gateway sia in modalità attiva (scanning) per 
+intercettare i dispositivi passivi.
 
 \section{Conta persone}
-raspberry
-a cosa serve
-come ci interagiamo
 
-\section{Telecamere densita'}
-a cosa servono 
-interazione con percorso intelligente
-alert
+\begin{figure}[H]
+    \centering  
+    \includegraphics[scale=0.2]{img/cap4/raspberry}
+\end{figure}
+
+
+Il conta persone, come i gateway BLE, è stato implementato sempre usando single board computer
+Raspberry.
+Dotato inoltre di modulo camera individua, usando librerie plugAndPlay, le persone che transitano 
+dalla porta della biblioteca dove è stato installato.
+
+\begin{figure}[H]
+    \centering  
+    \includegraphics[scale=0.2]{img/cap4/camera}
+\end{figure}
+
+Il conta persone scatena mantiene al suo interno un contatore delle persone attualmente dentro l'aula
+inviandole con cadenza di 5 minuti ad un microservizio specializzato di eServant che provvede ad
+aggiornare il dato sul database.

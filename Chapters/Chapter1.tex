@@ -18,7 +18,7 @@ Ci sono nel settore dello sport in Italia circa 150.000 impianti sportivi, di tu
 Non però una socialità «generalistica» ed indistinta, come nei social tradizionali tipo Facebook (dove si parla di tutto e di nulla), ma bensì una socialità caratterizzata da tre fattori unici e comuni:
 tante persone
 raccolte in un unico spazio
-all’interno del quale condividono un comune interesse
+all’interno del quale condividono un comune interesse.
 E’ questo un tipo di contesto non esplorato, al quale il progetto eServant prova a dare delle risposte e dei servizi mirati.
 \paragraph{}
 
@@ -31,22 +31,24 @@ La sperimentazione del progetto eServant si è svolta presso l’impianto univer
 
 \section{Aziende coinvolte}
 
-\textbf{Quid Informatica spa}
-Come capofila di progetto, Quid Informatica spa si è occupata di sviluppare mettere a disposizione l’infrastruttura tecnologica per fruire i moduli sviluppati dai vari partner.
-Sokom srl
+\textbf{Quid Informatica spa}\\
+Come capofila di progetto, Quid Informatica spa si è occupata di sviluppare e mettere a disposizione l’infrastruttura tecnologica per fruire i moduli sviluppati dai vari partner.
+\paragraph{}
+
+\textbf{Sokom srl}\\
 Sokom srl si è occupata dei cablaggi e disposizione dei vari access point necessari per fare comunicare i dispositivi IoT posti all’interno dell’impianto.
 \paragraph{}
 
-\textbf{Magenta srl}
+\textbf{Magenta srl}\\
 Magenta srl si è occupata dei sensori IoT per il conteggio delle persone tramite hardware Raspberry ed in parallelo al recupero di dati da fonti open source, come Lamma e Open Toscana.
 \paragraph{}
 
-\textbf{MICC}
+\textbf{MICC}\\
 Il MICC invece si è occupato dell’ottenimento della densità di persone in alcuni punti strategici dell’impianto di sperimentazione. Sviluppando inoltre un modulo di mappe, insieme alla tecnologia precedente, per consigliare ai partecipanti eventuali percorsi alternativi in caso di affollamento.
 Si aggiunge al partner MICC anche il motore di affinità tra visitatori grazie al collegamento social degli stessi.
 \paragraph{}
 
-\textbf{DIISM}
+\textbf{DIISM}\\
 Il dipartimento Ingegneria dell’informazione e Scienze Matematiche di Siena è fornitore e configuratore dei dispositivi iBeacon che tramite la tecnologia BLE (bluetooth low energy) ci ha permesso di ottenere la posizione delle persone all’interno dell’impianto di sperimentazione anche in assenza di GPS.
 \paragraph{}
 
@@ -61,18 +63,23 @@ implementazione molto più rigorosa di quella nativa Java.
 Il nucleo delle specifiche è un framework che definisce la gestione del modello del ciclo di vita del software, i moduli (chiamati bundle), un service registry e un ambiente di esecuzione. 
 L’aumento della complessità in un prodotto software, sia esso embedded, client o server, richiede codice modulare ma anche sistemi che siano estensibili dinamicamente, molto più in applicazioni tipo quelle di eSERVANT. Il framework OSGI implementa un modello a componenti completo e dinamico cioè quello che manca all’ambiente Java. 
 OSGi risolve molti dei problemi legati allo scarso supporto di Java nella modularità e nel dinamismo ed in tal senso OSGI è un framework che permette di fornire: 
-un sistema modulare per la piattaforma Java;
-un sistema dinamico, che consente l’installazione, l’avvio, lo stop e la
-rimozione dei moduli a runtime, senza quindi necessitare di riavvii;
-un sistema orientato ai servizi, i quali possono essere dinamicamente
-registrati ed utilizzati nella macchina virtuale Java .
+\begin{itemize}
+\item un sistema modulare per la piattaforma Java
+\item un sistema dinamico, che consente l’installazione, l’avvio, lo stop e la
+rimozione dei moduli a runtime, senza quindi necessitare di riavvii
+\item un sistema orientato ai servizi, i quali possono essere dinamicamente
+registrati ed utilizzati nella macchina virtuale Java
+\end{itemize}
+
+
+
 
 Per tutti i motivi indicati OSGI viene adottato all’interno dell’architettura di eSERVANT,
 come strumento per lo sviluppo delle applicazioni di backend di tutti i partner del
 progetto.
 
 \subsection{Microservizi}
-\includegraphics[scale=0.5]{img/cap1/architecture}\\
+\includegraphics[scale=0.6]{img/cap1/architecture}\\
 
 \subsection{Swagger (API)}
 Swagger è un insieme di specifiche e di strumenti che mirano a semplificare e
@@ -88,18 +95,17 @@ I vantaggi di questa standardizzazione sono molti, come una migliore e più cond
 esplorazione delle funzionalità di un’applicazione, oltre che alla possibilità di
 generare codice client/server sfruttando direttamente i vincoli definiti nello schema. Infatti, i metadati presenti nel file forniscono informazioni sufficienti sia per
 generare il componente backend con le rotte http e la validazione degli input, sia la parte client che in modo automatico può adattarsi all’evoluzione delle API del backend. La generazione della parte server è sicuramente vantaggiosa in quanto è possibile concentrarsi direttamente sulla programmazione della logica di business, senza doversi preoccupar e di come questa va ad interagire con il sistema al quale si interfaccia. Swagger è sostanzialmente composto da 3 moduli: 
-\paragraph{}
-\begin{itemize}
-\item 1. Swagger Editor: è lo strumento per iniziare rapidamente nell’attività di
-progettazione di una nuova API o per la sua modifica in un potente editor che
-visualizza visivamente la definizione Swagger e fornisce feedback in tempo
-reale;
-\item 2. Swagger Codegen: è lo strumento che crea ed abilitata le varie applicazioni al
-consumo delle API utilizzabili su una molteplicità di linguaggi di sviluppo (Java,
-Javascriptm Perl, PHP, Python, Ruby, Scala;
-\item 3. Swagger UI: è lo strumento che permette con uno strumento visuale il
-consumo delle API da parte delle varie applicazioni.
-\end{itemize}
+\begin{enumerate}
+    \item Swagger Editor: è lo strumento per iniziare rapidamente nell’attività di
+    progettazione di una nuova API o per la sua modifica in un potente editor che
+    visualizza visivamente la definizione Swagger e fornisce feedback in tempo
+    reale
+    \item Swagger Codegen: è lo strumento che crea ed abilitata le varie applicazioni al
+    consumo delle API utilizzabili su una molteplicità di linguaggi di sviluppo (Java,
+    Javascriptm Perl, PHP, Python, Ruby, Scala
+    \item Swagger UI: è lo strumento che permette con uno strumento visuale il
+    consumo delle API da parte delle varie applicazioni
+\end{enumerate}
 
 
 \paragraph{}
@@ -162,7 +168,7 @@ Questo framework utilizza di default l’engine Angular ed aggiunge ad esso una 
 Il punto di forza di Ionic è l’essere un framework ibrido, scrivendo quindi un unico progetto in Javascript è possibile eseguirlo immediatamente su 3 piattaforme diverse: web, Android e IOS.
 \paragraph{}
 
-Angular 2 è un framework Javascript pernsato per lo sviluppo di applicazioni di tipo web, sia per mobile che per desktop, basato sul progetto open-source prima di Angular e poi di Angular JS.
+Angular 2 è un framework Javascript pernsato per lo sviluppo di applicazioni di tipo web, sia per mobile che per desktop, basato sul progetto open-source prima di Angular JS e poi di Angular.
 \paragraph{}
 
 Angular da un lato esalta e potenzia l’approccio dichiarativo dell’HTML nella definizione
@@ -174,31 +180,26 @@ ricaricare l’intera pagina, cosa particolarmente utile in una applicazione del
 \paragraph{}
 
 Le caratteristiche di Angular 2 sono:
-mobile first: uno degli obiettivi del nuovo Angular è di proporsi per lo
-sviluppo di applicazioni Web sia per l’ambiente desktop che per il mobile.
-Infatti, Angular 2 supporta di default eventi touch e gesture e promette
-elevate prestazioni per assicurare una interazione fluida sui dispositivi
-mobile;
-\paragraph{}
 
-riduzione della curva di apprendimento: Angular 2 ha ottimizzato e
-semplificato di molto le complessità insite nella realizzazione di interfacce
-sia per mobile che desktop;
-\paragraph{}
-
-modularità: l’architettura di Angular 2 è altamente modulare e favorisce la
-scrittura di applicazioni modulari e la maggior parte dei componenti del
-framework è opzionale ed è possibile sostituirli con altri di terze parti o
-sviluppati in proprio;
-\paragraph{}
-
-prestazioni; un’attenzione particolare è stata posta sulle prestazioni del
-framework ed alla riduzione dei tempi di caricamento e boostrapping delle
-applicazioni.
-\paragraph{}
+\begin{itemize}
+    \item  \textbf{mobile first}: uno degli obiettivi del nuovo Angular è di proporsi per lo
+    sviluppo di applicazioni Web sia per l’ambiente desktop che per il mobile.
+    Infatti, Angular 2 supporta di default eventi touch e gesture e promette
+    elevate prestazioni per assicurare una interazione fluida sui dispositivi
+    mobile
+    \item \textbf{riduzione della curva di apprendimento}: Angular 2 ha ottimizzato e
+    semplificato di molto le complessità insite nella realizzazione di interfacce
+    sia per mobile che desktop
+    \item \textbf{modultarità}: l’architettura di Angular 2 è altamente modulare e favorisce la
+    scrittura di applicazioni modulari e la maggior parte dei componenti del
+    framework è opzionale ed è possibile sostituirli con altri di terze parti o
+    sviluppati in proprio
+    \item \textbf{prestazioni}: un’attenzione particolare è stata posta sulle prestazioni del
+    framework ed alla riduzione dei tempi di caricamento e boostrapping delle
+    applicazioni
+\end{itemize}
 
 Per tutti i motivi indicati Angular 2 viene adottato all’interno dell’architettura di
 eSERVANT, come strumento per il disegno delle interfacce sia su mobile (e quindi per
 gli utenti/spettatori) che di tipo desktop (e quindi dedicate alla centrale di controllo e
 gestione).
-\paragraph{}
