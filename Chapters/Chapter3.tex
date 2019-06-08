@@ -1,13 +1,14 @@
 \chapter{Backoffice}
 Il Backoffice è l'applicazione web che permette ai gestori degli impianti presenti su eServant di:
 \begin{itemize}
-    \item configurare i propri impianti, per ogni impianto gli eventi e per ogni evento i servizi disponibili
-    \item monitorare real-time l'impianto analizzando i dati provenienti dai sensori IoT
-    \item monitorare e analizzare offline le prestazioni del sistema/impianto dopo un evento o in un certo periodo
+    \item configurare i propri impianti, per ogni impianto gli eventi e per ogni evento i servizi disponibili;
+    \item monitorare real-time l'impianto analizzando i dati provenienti dai sensori IoT;
+    \item monitorare e analizzare offline le prestazioni del sistema/impianto dopo un evento o in un certo periodo;
 \end{itemize}
-
+Vediamo nello screenshot della dashboard in figura 19 le funzioni di monitoraggio dell'impianto.
 \begin{figure}[H]
     \centering  
+    \caption{Screenshot dashboard}
     \includegraphics[scale=0.4]{img/cap3/backoffice}
 \end{figure}
 
@@ -17,25 +18,25 @@ Material Design è un framework open source dell'azienda Google che aiuta i team
 di alta qualità in breve tempo.
 
 \section{Material Design}
-Material Design mette a disposizione al team di sviluppo un set di componenti plagAndPlay solo da personalizzare
+Material Design mette a disposizione al team di sviluppo un set di componenti plugAndPlay solo da personalizzare
 secondo il tema del brand utilizzatore.
 Il principale vantaggio riscontrato è stata la velocità di sviluppo. Avendo nella maggior parte dei
-casi dei componenti pronti all'uso ci ha permesso di concentrarsi sulla logica in Typescript invece che
+casi dei componenti pronti all'uso, ci ha permesso di concentrarci sulla logica in Typescript invece che
 sull'esperienza utente (non da sottovalutare).\\
 
 I principali componenti messi a disposizione da Material Design di Google sono:
 
 \begin{itemize}
-    \item Componenti per i form
-    \item Navigazione
-    \item Layout
-    \item Bottoni
-    \item Popup
-    \item Tabelle dati
+    \item Componenti per i form;
+    \item Navigazione;
+    \item Layout;
+    \item Bottoni;
+    \item Popup;
+    \item Tabelle dati;
 \end{itemize}
 
-Riporto un frammento di codice HTML usato nel backoffice di eServant ed il relativo effetto
-nell'interfaccia utente.
+Riportiamo un frammento di codice HTML usato nel backoffice di eServant ed il relativo effetto
+nell'interfaccia utente nella figura 20.
 
 \begin{lstlisting}[language=html]
 <form class="newsform">
@@ -49,33 +50,35 @@ nell'interfaccia utente.
 
 \begin{figure}[H]
     \centering  
+    \caption{Form creazione nuova news}
     \includegraphics[scale=0.4]{img/cap3/backoffice-form}
 \end{figure}
 
 \section{BEM}
-"There are only two hard problems in Computer Science: cache invalidation and naming things" cit. Phil Karlton
-
 È noto che un'organizzazione corretta dei fogli di stile può aumentare significativamente la velocità
 di sviluppo, il debug e l'implementazione di nuove feature. Purtroppo, molti codici CSS vengono
 sviluppati senza alcuna convenzione di struttura o di nome. Ciò porta a una base di codice CSS 
 non mantenibile a lungo termine.
+Ecco una citazione molto importante dove si afferma che ci sono due principali problemi nell'informatica: l'invalidazione della cache e le convenzioni sui nomi.\\\\
+"There are only two hard problems in Computer Science: cache invalidation and naming things" cit. Phil Karlton\\
 
 L'approccio BEM cerca di garantire a tutti i partecipanti attuali e futuri allo sviluppo di un sito web
 lavorino con un singolo base code e parlino la stessa lingua. 
 
 BEM è l'acronimo di 
 \begin{itemize}
-\item Block
-\item Element
-\item Modifier
+\item Block;
+\item Element;
+\item Modifier;
 \end{itemize}
 
 \begin{figure}[H]
     \centering  
-    \includegraphics[scale=0.4]{img/cap3/bem}
+    \caption{Esempio di adozione BEM}
+    \includegraphics[scale=0.5]{img/cap3/bem-1}
 \end{figure}
 
-Analizziamo le classi CSS usate:
+Analizziamo le classi CSS usate in figura 21:
 
 \begin{itemize}
     \item \textit{.card} è un \textbf{block}
@@ -84,10 +87,11 @@ Analizziamo le classi CSS usate:
     \textbf{Modifier} di \textit{.card{\_}image}
 \end{itemize}
 
-Vediamo come è stato usato BEM nel caso specifico dell'header.
+Vediamo come è stato usato BEM nel caso specifico dell'header rappresentato in figura 22.
 
 \begin{figure}[H]
     \centering  
+    \caption{Header}
     \includegraphics[scale=0.4]{img/cap3/header}
 \end{figure}
 
