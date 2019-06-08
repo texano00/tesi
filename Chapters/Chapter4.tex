@@ -1,7 +1,11 @@
 \chapter{IoT}
-Il progetto eServant include al suo interno 3 principali tecnologie che rientrano nella categoria
-"Internet Of Things"; dispositivi edge situati direttamente negli impianti che permettono di monitorare
-l'impianto e geolocalizzare i partecipanti dove il GPS ha dei grandi limiti.
+Il progetto eServant include al suo interno due principali tecnologie che rientrano nella categoria
+"Internet Of Things":
+\begin{itemize}
+    \item dispositivi BLE per geolocalizzare i partecipanti dove il GPS ha dei grandi limiti
+    \item conta persone per monitorare il flusso nelle aule
+\end{itemize}
+
 
 Scendendo nel dettaglio, l'impianto PIN di Prato è stato attrezzato con una serie di dispositivi BLE 
 (Bluetooth Low Energy) per intercettare i dispositivi mobili dei partecipanti e con un conta persone
@@ -18,8 +22,9 @@ le seguenti due modalità:
 
 \subsection{Gateway}
 I Gateway posizionati negli ingressi principali sono stati realizzati tramite single board computer 
-Raspberry.
+Raspberry e rivestiti tramite case fissato a muro come in figura 23.
 \begin{figure}[H]
+    \caption{Dispositivo Gateway}
     \centering  
     \includegraphics[scale=0.4]{img/cap4/gateway}
 \end{figure}
@@ -51,25 +56,27 @@ Rispetto ai gateway attivi hanno il vantaggio di essere molto più economici (5 
 dotati di batterie al litio.
 
 Gli smartphone con eServant installata (in modalità attiva o in background), potranno intercettare
-questi dispositivi ed inviare tramite HTTP al microservizio specializzato l'ID dell'ibeacon rilevato
+questi dispositivi (come in figura 24) ed inviare tramite HTTP al microservizio specializzato l'ID dell'ibeacon rilevato
 per permettere di geolocalizzare il partecipante nelle coordinate dell'ibeacon storicizzate nel nostro
 database.
 
 \begin{figure}[H]
     \centering  
+    \caption{iBeacon passivi in azione}
     \includegraphics[scale=0.4]{img/cap4/ibeacon-advertising}
 \end{figure}
 
 \subsection{iBeacon Wearable}
 \begin{figure}[H]
     \centering  
+    \caption{iBeacon indossabile}
     \includegraphics[scale=0.4]{img/cap4/wearable}
 \end{figure}
 I braccialetti BLE svolgono l'esatto compito degli iBeacon passivi sopra descritti ma vengono utilizzati
 con una strategia diversa all'interno di eServant.
 Il caso d'uso principale è permettere ai genitori di monitorare real-time la posizione dei propri
 figli all'interno di un impianto affollato.
-Al genitore, all'ingresso dell'impianto, verranno consegnati un braccialetto per ogni figlio.
+Al genitore, all'ingresso dell'impianto, verranno consegnati un braccialetto (come in figura 25) per ogni figlio.
 
 Nella sezione ricerca un minore dell'app eServant scansionerà il QRcode sopra il braccialetto e da quel momento
 in poi il suo utente sarà abilitato a monitorare l'ultima posizione rilevata di ogni singolo braccialetto.
@@ -77,8 +84,10 @@ L'assegnazione dei braccialetti viene rilasciata in maniera spontanea all'uscita
 tramite un sistema automatico alcune ore dopo la fine dell'evento (nel caso in cui il genitore non riconsegni
 i braccialetti).
 
+I passi sopra descritti sono riportati in figura 26.
 \begin{figure}[htp]
     \centering  
+    \caption{Caso d'uso braccialetti iBeacon}
     \subfloat[Scanner]{\includegraphics[scale=0.3]{img/cap4/wearable-1}}
     \subfloat[Nome]{\includegraphics[scale=0.3]{img/cap4/wearable-2}}
     \subfloat[Braccialetti registrati]{\includegraphics[scale=0.3]{img/cap4/wearable-3}}
@@ -95,17 +104,19 @@ intercettare i dispositivi passivi.
 
 \begin{figure}[H]
     \centering  
+    \caption{Single board computer Raspberry}
     \includegraphics[scale=0.2]{img/cap4/raspberry}
 \end{figure}
 
 
 Il conta persone, come i gateway BLE, è stato implementato sempre usando single board computer
 Raspberry.
-Dotato inoltre di modulo camera individua, usando librerie plugAndPlay, le persone che transitano 
+È dotato inoltre di modulo camera e individua, usando librerie plugAndPlay, le persone che transitano 
 dalla porta della biblioteca dove è stato installato.
 
 \begin{figure}[H]
     \centering  
+    \caption{Modulo camera per Raspberry}
     \includegraphics[scale=0.2]{img/cap4/camera}
 \end{figure}
 
