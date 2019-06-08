@@ -2,63 +2,63 @@
 
 \begin{figure}[htp]
     \centering  
+    \caption{Screenshot applicazione mobile eServant}
     \subfloat[Login]{\includegraphics[scale=0.15]{img/cap2/1}}
     \subfloat[Home]{\includegraphics[scale=0.15]{img/cap2/2}}
 \end{figure}
 
 \paragraph{}
 L’interfaccia della piattaforma eSERVANT verso gli utenti finali è come da progetto una APP per mobile.
-Per questo insieme a Sintra Consulting s.r.l. siamo andati a disegnare in modo molto avanzato tutte le interfacce andando a quadrare requisiti di sistema/casi di uso con mockup montati all’interno di una vera e proprio demo dell’APP finale attesa.
+I due screenshot nella figura 4 rappresentano, in ordine, la pagina di atterragio per gli utenti che
+non hanno ancora effettuato l'accesso e la home dove si radudano tutti gli eventi seguiti dall'utente.
+
+Per questo insieme a Sintra Consulting s.r.l. siamo andati a progettare in modo molto avanzato tutte le interfacce andando a quadrare requisiti di sistema/casi di uso con mockup montati all’interno di una vera e proprio demo dell’APP finale attesa.
 Tale strumento ci ha permesso di valutare non solo la user experience degli utenti, ma anche di poter fornire agli sviluppatori uno strumento specifico sul quale andare a traguardare la loro attività.
 
-Il prototipo di APP è quindi stato creato andando a realizzare slide sui cinque temi di fondo:
+Il prototipo di APP è quindi stato creato andando a realizzare dei mockup sui sei temi di fondo:
 \begin{itemize}
-\item presentazione e riconoscimento
-\item gestione evento e socialità
-\item gestione delle funzioni di aiuto
-\item gestione delle funzioni di mobilità
-\item gestione delle funzioni di navigabilità e mappe
-\item gestione del proprio profilo
+\item presentazione e riconoscimento;
+\item gestione evento e socialità;
+\item gestione delle funzioni di aiuto;
+\item gestione delle funzioni di mobilità;
+\item gestione delle funzioni di navigabilità e mappe;
+\item gestione del proprio profilo;
 \end{itemize}
 
 \section{Framework Ionic}
-\includegraphics[scale=0.50]{img/cap2/angular-ionic}\\
+\begin{figure}[h!]
+    \centering  
+    \caption{Ionic framework}
+    \includegraphics[scale=0.4]{img/cap2/angular-ionic}
+\end{figure}
+
 Ionic è un HTML5 SDK lanciato nella sua prima versione nel 2013 e progettato per essere la base per lo sviluppo di app mobili ibride. 
-Sviluppare un app mobile ibrida significa scrivere un unico code base per i due OS più famosi: IOS e Android.
+Sviluppare un'app mobile ibrida significa scrivere un unico code base per i due OS più famosi: IOS e Android.
 
 Ionic viene distribuito come pacchetto installabile con npm, il package manager di Nodejs.
 Node.js è un ambiente di run-time JavaScript open-source e multipiattaforma che esegue codice JavaScript all'esterno di un browser, lato server per esempio.
 
-Installazione Ionic tramite CLI Linux
+Ionic si installa tramite CLI Linux come di seguito
 \begin{lstlisting}
 npm install -g ionic
 \end{lstlisting}
 
-Elementi positivi emersi sviluppando in Ionic:
-\begin{itemize}
-    \item essendo tra i più famosi web framework, la \textbf{velocità di sviluppo} è un aspetto caratterizzante di Ionic
-    \item \textbf{semplice} da capire
-    \item supporta il \textbf{live reload} permettendo così al developer di vedere immediatamente le modifiche direttamente sul dispositivo mobile
-\end{itemize}
-    
-Elementi negativi emersi:
-\begin{itemize}
-    \item l'accesso alle funzioni native tramite Cordova è \textbf{limitato}. Non è assolutamente paragonabile alle API native dell'OS
-    \item \textbf{instabilità} nell'accesso nativo. Generalmente le librerie Cordova non sono allineate con le ultime API rilasciate da Android/IOS
-\end{itemize}
-
-La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e SASS. Ciò consente la creazione di applicazioni mobili ricche di funzionalità che utilizzano esclusivamente tecnologie web.
-\paragraph{}
+La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e SASS. Ciò consente la creazione di applicazioni mobili ricche di funzionalità che utilizzano esclusivamente tecnologie web come mostrato in figura 5.
+\\\\
 \textbf{Cordova}\\
 \textit{Apache Cordova, ex-PhoneGap e futuro Capacitor}
 
-\includegraphics[scale=0.80]{img/cap2/cordova}\\
+\begin{figure}[h!]
+    \centering  
+    \caption{Cordova}
+    \includegraphics[scale=0.80]{img/cap2/cordova}
+\end{figure}
 
 Apache Cordova è un framework di sviluppo di applicazioni mobili che può essere utilizzato per creare app mobili multipiattaforma usando HTML5 e puro JavaScript. 
-Per multipiattaforma, intendiamo che il codice di applicazione può essere scritto una volta utilizzando HTML5 e JavaScript e può essere eseguito su diversi OS; come Android, iOS o Windows Mobile.
-
-Riporto qua un frammento di codice che permette di aprire la camera nativa del dispositivo mobile.
-
+Per multipiattaforma intendiamo che il codice di un'applicazione può essere scritto una volta sola utilizzando HTML5 e JavaScript e può essere eseguito su diversi OS, come Android, iOS o Windows Mobile.
+La figura 6 raffigurara l'astrazione dell'implementazione nativa tramite l'uso di HTML, CSS e JS.
+Riporto di seguito un frammento di codice che permette di aprire la camera nativa del dispositivo mobile per scattare foto.
+\\
 \begin{lstlisting}
 ionic cordova plugin add cordova-plugin-camera
 npm install @ionic-native/camera
@@ -87,14 +87,10 @@ openCamera(){
 }
 \end{lstlisting}
 
-Vediamo come in 16 linee di codice siamo riusciti a raggiungere il seguente risultato, sia su IOS che su Android:
-
-\includegraphics[scale=0.60]{img/cap2/camera}
-
-
-\paragraph{}
-\textit{SASS}
-
+Vediamo come in sole 16 linee di codice siamo riusciti ad aprire la camera nativa del sistema operativo per scattare
+una foto, ovviamente lo stesso codice viene compilato sia su IOS che su Android grazie a Cordova.
+\\\\
+\textit{SASS}\\
 Scrivere CSS (Cascading Style Sheets) è fondamentale per descrivere in modo efficace il modo in cui gli elementi HTML devono 
 essere visualizzati su una pagina Web per definire stili, design, layout e tutto ciò che è necessario per creare un sito 
 Web sbalorditivo. Ma quando inizi a lavorare con siti grandi e complessi, potresti iniziare a chiederti se i CSS potrebbero 
@@ -105,14 +101,8 @@ SASS è un pre-processore CSS che consente di utilizzare variabili, operazioni m
 e altre funzionalità interessanti che rendono la scrittura CSS molto più potente. In un certo senso, si potrebbe pensare a 
 SASS come a un linguaggio di estensione del foglio di stile perché estende le caratteristiche CSS standard introducendo i
 vantaggi di un linguaggio di programmazione di base. Quindi SASS compilerà il codice e genererà l'output CSS che un
-browser può comprendere.
-
-\paragraph{}
-\paragraph{}
-\paragraph{}
-\paragraph{}
-
-Vediamo alcune funzioni SASS in confronto con CSS puro:\\
+browser può comprendere. \\
+Vediamo alcune funzioni SASS in confronto con CSS puro:\\\\
 
 \textit{Variabili}
 \begin{multicols}{2}
@@ -140,10 +130,7 @@ body {
 \begin{multicols}{2}
     \columnbreak
 \end{multicols}
-
-
 \textit{Mixin}
-
 \begin{multicols}{2}
     \begin{lstlisting}
 // SASS
@@ -168,10 +155,7 @@ body {
     \end{lstlisting}
 \end{multicols}
 
-\paragraph{}
-\paragraph{}
-\paragraph{}
-\paragraph{}
+
 \paragraph{}
 \paragraph{}
 \paragraph{}
@@ -229,20 +213,20 @@ lo stato delle applicazioni client.
 Lo scopo principale di questo pattern è fornire uno stato dell'applicazione prevedibile, basato su tre principi principali.
 
 \begin{itemize}
-    \item \textbf{Unica sorgente di verità}: significa che l'intero stato dell'applicazione è memorizzato nella
-    stessa struttura dati.
+    \item \textbf{Unica sorgente di verità}: significa che l'intero stato dell'applicazione è memorizzato un un'unica struttura dati come mostrato in figura 9;
     \item \textbf{Lo stato è read only}: lo stato non viene mai cambiato direttamente, 
     solo tramite \textit{action}. Le \textit{action} descrivono cosa sta succedendo (possiamo vedere le action
-    come richieste di ottenimento dati, rimozione, aggiornamento stato).
+    come richieste di ottenimento dati, rimozione, aggiornamento stato). Possiamo notare questa immediata differenza confrontando la figura 7 con la figura 8;
     \item \textbf{I cambiamenti sono fatti solo da funzioni pure}: quando un' \textit{action} viene lanciata, essa verrà
     intercettata dai \textit{reducer}.
-    Questi \textit{reducer} (sono solo funzioni pure) ricevono un'azione e lo stato, a seconda dell'azione inviata 
-    (di solito con un'istruzione switch) eseguono un'operazione e restituiscono un nuovo oggetto di stato. 
+    Questi \textit{reducer} (sono solo funzioni pure) ricevono un'azione e lo stato, quindi a seconda dell'azione inviata 
+    (di solito con un'istruzione switch), eseguono un'operazione e restituiscono un nuovo oggetto di stato. 
     Lo stato in un'app redux è immutabile! Quindi, quando un \textit{reducer} modifica qualcosa nello stato, 
-    restituisce un nuovo oggetto stato.
+    restituisce un nuovo oggetto stato;
 \end{itemize}
 
 \paragraph{}
+
 \begin{figure}[h!]
     \centering  
     \caption{NgRx flow}
@@ -259,37 +243,34 @@ Lo scopo principale di questo pattern è fornire uno stato dell'applicazione pre
 
 \begin{figure}[h!]
     \centering  
-    \includegraphics[scale=0.2]{img/cap2/ngrx-eservant}
+    \caption{Ispezione stato NgRx}
+    \includegraphics[scale=0.29]{img/cap2/ngrx-eservant-90}
 \end{figure}
 
 \section{Social login}
 Al primo accesso all'APP eServant è necessario dare il consenso per almeno uno dei seguenti social:
 \begin{itemize}
-\item Facebook
-\item Instagram
-\item Twitter
+\item Facebook;
+\item Instagram;
+\item Twitter;
 \end{itemize}
 
 Altrimenti viene data la possibilità di fare un accesso privato tramite username e password.
 L'autenticazione verso i social network sopra citati avviene tramite protocollo OAuth2.0.
 
-Il framework di autorizzazione OAuth 2.0 abilita un'applicazione di terze parti a ottenere un accesso limitato a un servizio HTTP, attivo
-per conto di un proprietario di risorse orchestrando un'inerazione di approvazione tra il proprietario della risorsa e il servizio HTTP.
-Questa specifica sostituisce e obsoleta il protocollo OAuth 1.0 descritto in RFC 5849.
-\paragraph{}
-\paragraph{}
-\paragraph{}
-
-OAuth 2.0 flow 
+Il framework di autorizzazione OAuth2.0 abilita un'applicazione di terze parti a ottenere un accesso limitato a un servizio HTTP, attivo
+per conto di un proprietario di risorse, orchestrando un'interazione di approvazione tra il proprietario della risorsa e il servizio HTTP.
+Questa specifica sostituisce il protocollo OAuth 1.0 descritto in RFC 5849.
 
 \begin{figure}[h!]
     \centering  
-    \includegraphics[scale=0.60]{img/cap2/oauth20-1}
+    \caption{OAuth 2.0 flow }
+    \includegraphics[scale=0.60]{img/cap2/oauth20-2}
 \end{figure}
 
 \paragraph{}
 
-\textbf{Attori}
+Vediamo quali sono gli \textbf{Attori} coinvolti nel protocollo OAuth2.0 mostrato in figura 10.
 
 \begin{itemize}
 \item \textit{resource owner}: un'entità in grado di approvare l'accesso a una risorsa protetta.
@@ -297,9 +278,9 @@ OAuth 2.0 flow
 dal resource owner
 \item \textit{resource server}: il server che ospita le risorse protette. Il resource Server è in grado di accettare
 e rispondere alle richieste di risorse protette utilizzando i token di accesso.
-\item \textit{client}: un'applicazione che fa richieste di risorse protette per conto di
-proprietario di risorse e con la sua autorizzazione. Il termine "client"
-non implica particolari caratsteristiche di implementazione (l'applicazione può essere eseguita
+\item \textit{client}: un'applicazione che fa richieste di risorse protette per conto del
+proprietario delle risorse e con la sua autorizzazione. Il termine "client"
+non implica particolari caratteristiche di implementazione (l'applicazione può essere eseguita
 su un server, un client web o altri dispositivi).
 \end{itemize}
 
@@ -311,31 +292,33 @@ dall'ultima posizione rilevata del partecipante.
 
 Il nostro compito si è suddiviso in tre parti:
 \begin{itemize}
-\item Creazione livelli da applicare alle mappe OSM per la navigazione interna
-\item Integrazione delle mappe sia sull'APP Ionic che sul backoffice web
-\item Recupero ultima posizione dell'utente
+\item Creazione livelli da applicare alle mappe OSM per la navigazione interna;
+\item Integrazione delle mappe sia sull'APP Ionic che sul backoffice web;
+\item Recupero ultima posizione dell'utente;
 \end{itemize}
 
-Visto che questa feature di eServant è un software standalone, l'integrazione all'interno dell'app Ionic è stata fatta
+L'integrazione all'interno dell'app Ionic è stata fatta
 tramite iframe.
-Frammento di codice:
+Frammento di codice dell'app Ionic per includere le mappe:
 \begin{lstlisting}[language=html]
 <iframe src="https://www.eservant.it/maps"></iframe>
 \end{lstlisting}
 
 \paragraph{}
-
+Il frammento indicato sopra permette tramite una singola linea di codice
+di includere le mappe e ottenre il risultato come da screenshot in figura 11.
 \begin{figure}[htp]
     \centering  
+    \caption{Mappe nell'app eServant}
     \subfloat[Selezione POI]{\includegraphics[scale=0.5]{img/cap2/maps-1}}
     \subfloat[Avvio navigazione verso il POI]{\includegraphics[scale=0.5]{img/cap2/maps-2}}
 \end{figure}
 
 
 \section{Geolocalizzazione}
-Come ho detto nella sezione precedente, la navigazione all'interno dell'impianto necessità la posizione iniziale
+Come abbiamo detto nella sezione precedente, la navigazione all'interno dell'impianto necessita la posizione iniziale
 dalla quale far iniziare il percorso verso il POI selezionato.
-Questa posizione ovviamente è un elemento dinamico che deve mutarsi nel tempo dipendentemente dalla posizione
+Questa posizione ovviamente è un elemento dinamico che deve mutare nel tempo dipendentemente dalla posizione
 dell'utente all'interno dell'impianto.
 
 Da un primissimo brainstorming è emerso che la tecnologia GPS non è affidabile in impianti indoor ma anche in ambienti
@@ -345,14 +328,16 @@ la Geolocalizzazione dell'utente, dalla più affidabile alla meno affidabile.
 In ordine di priorità di affidabilità decrescente, troviamo:
 
 \begin{itemize}
-    \item QRcode manuale
-    \item GPS
-    \item iBeacon
+    \item QRcode manuale;
+    \item GPS;
+    \item iBeacon;
 \end{itemize}
 
 
-Risultato finale:
+È possibile vedere il risultato della geolocalizzazione nelle mappe
+nella figura 12.
 \begin{figure}[H]
+    \caption{Localizzazione nelle mappe}
     \centering  
     \includegraphics[scale=0.5]{img/cap2/geo-1}
 \end{figure}
@@ -361,9 +346,10 @@ Risultato finale:
 \subsection{QRcode}
 \begin{figure}[H]
     \centering  
+    \caption{QRcode}
     \includegraphics[scale=1]{img/cap2/barcode-qrcode}
 \end{figure}
-I codici QR sono stati creati nel 1994 da Denso Wave, una filiale giapponese del Gruppo Toyota.
+I codici QR (esempio in figura 13) sono stati creati nel 1994 da Denso Wave, una filiale giapponese del Gruppo Toyota.
 L'uso di questa tecnologia è ora gratuito. Il QR Code non è l'unico codice a barre bidimensionale 
 sul mercato, un altro esempio è il codice Data Matrix.
 \\
@@ -374,31 +360,43 @@ Nel caso di eServant il codice QRcode racchiude un identificativo di un POI. \\
 Vediamo le fasi del processo di geolocalizzazione tramite QRcode:
 
 \begin{enumerate}
-    \item Scansione QRcode tramite l'app di eServant
-    \item Decodifica del QRcode e ottenimento del POI ID
-    \item Invio del POI ID, insieme all' ID dell'utente, al server
-    \item Il server, una volta ottenute le coordinate del POI, provvede ad aggiornare l'ultima posizione dell'utente
-\end{enumerate}
-
+    \item Scansione QRcode tramite l'app di eServant.\\
+    Sempre tramite cordova, un esempio di accesso alla camera nativa dell'OS per scansionare
+    codici QRcode.
 \begin{lstlisting}
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-
-constructor(private barcodeScanner: BarcodeScanner) { }
-
-this.barcodeScanner.scan().then(barcodeData => {
-    console.log('Barcode data', barcodeData);
-}).catch(err => {
-    console.log('Error', err);
-});
+    import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+    
+    constructor(private barcodeScanner: BarcodeScanner) { }
+    
+    this.barcodeScanner.scan().then(barcodeData => {
+        console.log('Barcode data', barcodeData);
+    }).catch(err => {
+        console.log('Error', err);
+    });
 \end{lstlisting}
 
-\subsection{GPS}
+    \item Decodifica del QRcode e ottenimento del POI ID;
+    \item Invio del POI ID, insieme all' ID dell'utente, al server;
+    \item Il server, una volta ottenute le coordinate del POI, provvede ad aggiornare l'ultima posizione dell'utente;
+\end{enumerate}
 
+
+\subsection{A-GPS}
+
+Tramite GPS assistito (A-GPS) la localizzazione del partecipante all'evento è automatica,
+a patto che il GPS del dispositivo mobile sia abilitato.\\
+La tecnologia GPS assistito permette di acquisire segnale satellitare in maniera più rapida
+rispetto al GPS tradizionale.\\
+Tramite rete dati cellulare vengono indicate al dispositivo mobile le posizioni previste dei
+satelliti GPS come mostrato in figura 14. In questo modo, il dispositivo sa dove cercare i satelliti ed è in grado in acquisirne 
+i segnali in pochi secondi, anche in condizioni difficili.
 \begin{figure}[H]
     \centering  
-    \includegraphics[scale=0.6]{img/cap2/gps}
+    \caption{Comunicazione A-GPS}
+    \includegraphics[scale=0.7]{img/cap2/gps}
 \end{figure}
-
+Vediamo un frammento di codice per ottenere in tempo reale la 
+posizione del dispositivo tramite A-GPS.
 \begin{lstlisting}
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
@@ -423,6 +421,7 @@ watch.subscribe((data) => {
 
 \begin{figure}[H]
     \centering  
+    \caption{Dispositivo iBeacon}
     \includegraphics[scale=0.3]{img/cap2/beacon}
 \end{figure}
 
@@ -438,6 +437,7 @@ connessione corta che scandisce i tempi, affidabilità e sicurezza.
 BLE consuma da 10 a 20 volte meno energia (e 1000 volte meno del Wi-Fi), e può trasmettere
 dati con velocità 50 volte superiore rispetto al Bluetooth classico. 
 
+Un esempio di dispositivo iBeacon è mostrato in figura 15.\\
 Lato client (Ionic), il plugin cordova IBeacon mette a disposizione due principali metodi
 che permettono di intercettare due eventi:
 
@@ -446,8 +446,10 @@ che permettono di intercettare due eventi:
     \item Dispositivo mobile uscito dal raggio dell'ibeacon
 \end{itemize}
 
+La figura 16 mostra un dispositivo mobile entrato nel raggio di quattro iBeacon.
 \begin{figure}[H]
     \centering  
+    \caption{Prossimità tramite iBeacon}
     \includegraphics[scale=0.3]{img/cap2/beacon-proximity}
 \end{figure}
 
@@ -504,13 +506,7 @@ Introduciamo 2 concetti principali su cui si basa il motore NLP:
 cambiano solo i valori degli slot.
 \end{itemize}
 
-Vediamo nel caso specifico di eServant.
-
-\begin{figure}[htp]
-    \centering  
-    \subfloat[Domanda]{\includegraphics[scale=0.5]{img/cap2/chatbot-1}}
-    \subfloat[Risposta]{\includegraphics[scale=0.5]{img/cap2/chatbot-2}}
-\end{figure}
+Vediamo nel caso specifico di eServant rappresentato dagli screenshot in figura 17.
 
 \textit{Vorrei \textcolor{green}{raggiungere il punto di interesse} \textcolor{purple}{Aula Magna}}\\
 Analisi tramite NLP:
@@ -523,46 +519,34 @@ Analisi tramite NLP:
 \end{itemize}
 \end{itemize}
     
+
+\begin{figure}[htp]
+    \centering  
+    \caption{Chatbot in esecuzione}
+    \subfloat[Domanda]{\includegraphics[scale=0.5]{img/cap2/chatbot-1}}
+    \subfloat[Risposta]{\includegraphics[scale=0.5]{img/cap2/chatbot-2}}
+\end{figure}
+
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+\paragraph{}
+
 \subsection{Brainstorming}
 \begin{figure}[htp]
     \centering  
-    \subfloat[Brainstorming]{\includegraphics[scale=0.5]{img/cap2/eservant-chatbot}}
+    \caption{Brainstorming per l'implementazione del chatbot}
+    \subfloat{\includegraphics[scale=0.5]{img/cap2/eservant-chatbot}}
 \end{figure}
 
 
-Come si nota dal flow decisionale, la prima domanda che ci siamo posti è stata se volevamo fare il deploy del
+Come si nota dal flow decisionale in figura 18, la prima domanda che ci siamo posti è stata se volevamo fare il deploy del
 chatbot su cloud oppure in-house.\\
 
 Vediamo nel dettaglio le differenze principali tra le due strade:\\
-\textbf{Cloud}\\
-\textit{pro}\\
-\begin{itemize}
-    \item servizio pronto all'uso
-    \item semplice da configurare, allenare, mantenere
-    \item riceve aggiornamente continui
-    \item scalabilità
-\end{itemize}
-\textit{contro}
-\begin{itemize}
-    \item costo non basso (generalmente per singola chiamata)
-    \item privacy, i dati vengono trasmetti sui server del cloud provider
-    \item non portabile
-\end{itemize}
-\paragraph{}
 
-\textbf{In-house}\\
-\textit{pro}\\
-\begin{itemize}
-    \item privacy, i dati non escono dalla workstation
-    \item controllo del provider infrastrutturale
-\end{itemize}
-\textit{contro}
-\begin{itemize}
-    \item tempi di apprendimento e sviluppo maggiori
-    \item mantenimento
-\end{itemize}
-
-\subsection{implementazione}
+\subsection{Implementazione}
 
 \begin{figure}[htp]
     \centering  
