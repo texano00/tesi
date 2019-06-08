@@ -28,7 +28,7 @@ Il prototipo di APP è quindi stato creato andando a realizzare dei mockup sui s
 \section{Framework Ionic}
 \begin{figure}[h!]
     \centering  
-    \caption{Ionic framework}
+    \caption{Ionic framework [11]}
     \includegraphics[scale=0.4]{img/cap2/angular-ionic}
 \end{figure}
 
@@ -38,7 +38,7 @@ Sviluppare un'app mobile ibrida significa scrivere un unico code base per i due 
 Ionic viene distribuito come pacchetto installabile con npm, il package manager di Nodejs.
 Node.js è un ambiente di run-time JavaScript open-source e multipiattaforma che esegue codice JavaScript all'esterno di un browser, lato server per esempio.
 
-Ionic si installa tramite CLI Linux come di seguito
+Ionic si installa tramite CLI Linux come di seguito [12]
 \begin{lstlisting}
 npm install -g ionic
 \end{lstlisting}
@@ -50,14 +50,14 @@ La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e S
 
 \begin{figure}[h!]
     \centering  
-    \caption{Cordova}
+    \caption{Cordova [13]}
     \includegraphics[scale=0.80]{img/cap2/cordova}
 \end{figure}
 
 Apache Cordova è un framework di sviluppo di applicazioni mobili che può essere utilizzato per creare app mobili multipiattaforma usando HTML5 e puro JavaScript. 
 Per multipiattaforma intendiamo che il codice di un'applicazione può essere scritto una volta sola utilizzando HTML5 e JavaScript e può essere eseguito su diversi OS, come Android, iOS o Windows Mobile.
 La figura 6 raffigurara l'astrazione dell'implementazione nativa tramite l'uso di HTML, CSS e JS.
-Riporto di seguito un frammento di codice che permette di aprire la camera nativa del dispositivo mobile per scattare foto.
+Riporto di seguito un frammento di codice che permette di aprire la camera nativa del dispositivo mobile per scattare foto [14].
 \\
 \begin{lstlisting}
 ionic cordova plugin add cordova-plugin-camera
@@ -97,7 +97,7 @@ Web sbalorditivo. Ma quando inizi a lavorare con siti grandi e complessi, potres
 essere migliori. 
 
 In questi casi entra in gioco SASS (Syntacticly Awesome Stylesheets).
-SASS è un pre-processore CSS che consente di utilizzare variabili, operazioni matematiche, mixin, loop, funzioni, importazioni 
+SASS [15] è un pre-processore CSS che consente di utilizzare variabili, operazioni matematiche, mixin, loop, funzioni, importazioni 
 e altre funzionalità interessanti che rendono la scrittura CSS molto più potente. In un certo senso, si potrebbe pensare a 
 SASS come a un linguaggio di estensione del foglio di stile perché estende le caratteristiche CSS standard introducendo i
 vantaggi di un linguaggio di programmazione di base. Quindi SASS compilerà il codice e genererà l'output CSS che un
@@ -210,7 +210,7 @@ $class-slug: for !default
 NGRX è un gruppo di librerie per Angular ispirate al pattern Flux sviluppato dal team di Facebook per gestire
 lo stato delle applicazioni client.
 
-Lo scopo principale di questo pattern è fornire uno stato dell'applicazione prevedibile, basato su tre principi principali.
+Lo scopo principale di questo pattern è fornire uno stato dell'applicazione prevedibile, basato su tre principi principali [16].
 
 \begin{itemize}
     \item \textbf{Unica sorgente di verità}: significa che l'intero stato dell'applicazione è memorizzato un un'unica struttura dati come mostrato in figura 9;
@@ -230,7 +230,7 @@ Possiamo rendersi conto dei tre principi fondamentali sopra citati confrontando 
 
 \begin{figure}[h!]
     \centering  
-    \caption{App con gestore stato NgRx}
+    \caption{App con gestore stato NgRx [17]}
     \includegraphics[scale=0.4]{img/cap2/ngrx}
 \end{figure}
 \paragraph{}
@@ -265,13 +265,13 @@ Questa specifica sostituisce il protocollo OAuth 1.0 descritto in RFC 5849.
 
 \begin{figure}[h!]
     \centering  
-    \caption{OAuth 2.0 flow }
+    \caption{OAuth 2.0 flow [18]}
     \includegraphics[scale=0.60]{img/cap2/oauth20-2}
 \end{figure}
 
 \paragraph{}
 
-Vediamo quali sono gli \textbf{Attori} coinvolti nel protocollo OAuth2.0 mostrato in figura 10.
+Vediamo quali sono gli \textbf{Attori} coinvolti nel protocollo OAuth2.0 mostrato in figura 10 [18].
 
 \begin{itemize}
 \item \textit{resource owner}: un'entità in grado di approvare l'accesso a una risorsa protetta;
@@ -350,7 +350,7 @@ nella figura 12.
     \caption{QRcode}
     \includegraphics[scale=1]{img/cap2/barcode-qrcode}
 \end{figure}
-I codici QR (esempio in figura 13) sono stati creati nel 1994 da Denso Wave, una filiale giapponese del Gruppo Toyota.
+I codici QR (esempio in figura 13) sono stati creati nel 1994 da Denso Wave [19], una filiale giapponese del Gruppo Toyota.
 L'uso di questa tecnologia è ora gratuito. Il QR Code non è l'unico codice a barre bidimensionale 
 sul mercato, un altro esempio è il codice Data Matrix.
 \\
@@ -363,7 +363,7 @@ Vediamo le fasi del processo di geolocalizzazione tramite QRcode:
 \begin{enumerate}
     \item Scansione QRcode tramite l'app di eServant.\\
     Sempre tramite cordova, un esempio di accesso alla camera nativa dell'OS per scansionare
-    codici QRcode;
+    codici QRcode [20];
 \begin{lstlisting}
     import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
     
@@ -393,11 +393,11 @@ satelliti GPS come mostrato in figura 14. In questo modo, il dispositivo sa dove
 i segnali in pochi secondi, anche in condizioni difficili.
 \begin{figure}[H]
     \centering  
-    \caption{Comunicazione A-GPS}
+    \caption{Comunicazione A-GPS [21]}
     \includegraphics[scale=0.7]{img/cap2/gps}
 \end{figure}
 Vediamo un frammento di codice per ottenere in tempo reale la 
-posizione del dispositivo tramite A-GPS.
+posizione del dispositivo tramite A-GPS [22].
 \begin{lstlisting}
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
@@ -422,11 +422,11 @@ watch.subscribe((data) => {
 
 \begin{figure}[H]
     \centering  
-    \caption{Dispositivo iBeacon}
+    \caption{Dispositivo iBeacon [24]}
     \includegraphics[scale=0.3]{img/cap2/beacon}
 \end{figure}
 
-iBeacon è una tecnologia basata su Bluetooth Low Energy. A partire dal 2013 iBeacon è 
+iBeacon [23] è una tecnologia basata su Bluetooth Low Energy. A partire dal 2013 iBeacon è 
 integrato in Apple iOS 7. Il primo progetto pilota è stato lanciato nei negozi Apple nel
 Dicembre 2013.
 
@@ -450,12 +450,12 @@ che permettono di intercettare due eventi:
 La figura 16 mostra un dispositivo mobile entrato nel raggio di quattro iBeacon.
 \begin{figure}[H]
     \centering  
-    \caption{Prossimità tramite iBeacon}
+    \caption{Prossimità tramite iBeacon [25]}
     \includegraphics[scale=0.3]{img/cap2/beacon-proximity}
 \end{figure}
 
 
-Frammento di codice Ionic:
+Frammento di codice Ionic [26]:
 \begin{lstlisting}
 import { IBeacon } from '@ionic-native/ibeacon/ngx';
 
@@ -537,7 +537,7 @@ Analisi tramite NLP:
 \subsection{Brainstorming}
 \begin{figure}[htp]
     \centering  
-    \caption{Brainstorming per l'implementazione del chatbot}
+    \caption{Brainstorming per l'implementazione del chatbot [27][28][29][30]}
     \subfloat{\includegraphics[scale=0.5]{img/cap2/eservant-chatbot}}
 \end{figure}
 

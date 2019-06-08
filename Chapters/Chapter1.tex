@@ -1,7 +1,7 @@
 \chapter{eServant}
 
 \section{Panoramica}
-eServant è un progetto di ricerca cofinanziato con fondi POR-CReO FESR 2014 - 2020 - Bandi per aiuti agli investimenti in ricerca, sviluppo e innovazione RSI. QUID Informatica S.p.A è Capofila di un raggruppamento di Aziende ed Organismi di ricerca finalizzato alla realizzazione del progetto.
+eServant [1] è un progetto di ricerca cofinanziato con fondi POR-CReO FESR 2014 - 2020 - Bandi per aiuti agli investimenti in ricerca, sviluppo e innovazione RSI. QUID Informatica S.p.A è Capofila di un raggruppamento di Aziende ed Organismi di ricerca finalizzato alla realizzazione del progetto.
 \paragraph{}
 
 Il focus del progetto è la gestione innovativa dei processi collegati ai grandi eventi (musicali, sportivi, del tempo libero o del lavoro) che hanno luogo all’interno di impianti e strutture, sia in termini di comunicazione e controllo, sia in termini di servizi innovativi per gli spettatori/utenti, andando a disegnare un progetto di impianto intelligente, inserito all’interno di una struttura di città intelligente, costruita per un cittadino consapevole, che valorizzi i temi della responsabilità sociale e civile e  della sostenibilità.
@@ -14,7 +14,7 @@ L’obiettivo operativo è quindi quello di progettare un modello di centro-serv
 \paragraph{}
 
 Il concetto di impianto al quale presta i suoi servizi il progetto eServant è molto ampio.
-Ci sono nel settore dello sport in Italia circa 150.000 impianti sportivi, di tutte le taglie. Ci sono gli impianti per il teatro (1.162), i centri commerciali, retail park e factory outlet (956), migliaia di punti vendita della GDO, oltre 200 parchi nella sola Toscana, i comuni con decine di migliaia tra centri storici, aree monumentali, aree archeologiche, complessi monumentali e luoghi della cultura, oltre 57.000 plessi scolastici ed un numero incalcolabile di luoghi ove si esprime la socialità.
+Ci sono nel settore dello sport in Italia circa 150.000 impianti sportivi, di tutte le taglie. Ci sono gli impianti per il teatro (1.162), i centri commerciali, retail park e factory outlet (956), migliaia di punti vendita della GDO, oltre 200 parchi nella sola Toscana, i comuni con decine di migliaia tra centri storici, aree monumentali, aree archeologiche, complessi monumentali e luoghi della cultura, oltre 57.000 plessi scolastici ed un numero incalcolabile di luoghi ove si esprime la socialità [2].
 Non però una socialità «generalistica» ed indistinta, come nei social tradizionali tipo Facebook (dove si parla di tutto e di nulla), ma bensì una socialità caratterizzata da tre fattori unici e comuni:
 tante persone
 raccolte in un unico spazio
@@ -59,7 +59,7 @@ Il dipartimento Ingegneria dell’informazione e Scienze Matematiche di Siena è
     \caption{Casi d'uso eServant}
     \includegraphics[scale=0.5]{img/cap1/casidiuso}
 \end{figure}
-La figura 2 descrive le funzioni e servizi offerti dal progetto eServant e percepiti dagli attori che interagiscono col sistema stesso.
+La figura 2 descrive le funzioni e servizi offerti dal progetto eServant e percepiti dagli attori che interagiscono col sistema stesso [3].
 \\\\\\\\Gli attori coinvolti nelle funzioni di eServant sono due:
 \begin{itemize}
     \item proprietario impianto;
@@ -75,7 +75,7 @@ L'attore "Partecipante Eventi" invece, fruisce di tutti quei servizi configurati
 i relativi dettagli.
 
 \section{Back-end}
-OSGI (Open Service Gateway Initiative) è una specifica che permette di costruire
+OSGI (Open Service Gateway Initiative)[4] è  è una specifica che permette di costruire
 applicazioni modulari a componenti (detti “bundle”) e che introduce una
 programmazione Service Oriented, permettendo una separazione tra interfaccia ed
 implementazione molto più rigorosa di quella nativa Java.
@@ -118,10 +118,10 @@ che nessun'altro oltre a lui può accederci.
 
 L'ultima parte, quella delle risorse esterne, rappresenta tutti servizi fuori dalla rete
 dei microservizi; "open data" per esempio sono API pubbliche per il recupero di dati pubblici (es. Lamma per il meteo)
-mentre "Firebase" sono una serie di servizi cloud per push notification e real time database.
+mentre "Firebase" sono una serie di servizi cloud per push notification e real time database [5].
 
 \subsection{Swagger (API)}
-Swagger è un insieme di specifiche e di strumenti che mirano a semplificare e
+Swagger [6] è un insieme di specifiche e di strumenti che mirano a semplificare e
 standardizzare i processi di documentazione di API per servizi web RESTful, il tutto su
 di una piattaforma di tipo open-source.
 Il cuore di Swagger consiste in un file testuale (in formato sia YAML che JSON) dove
@@ -158,7 +158,7 @@ la applicazioni dei partner.
 I due tipi di database usati nel progetto sono stati PostgreSQL e MongoDB, il primo relazionale e il secondo orientato a documenti.
 \paragraph{}
 
-PostgreSQL è noto come il più avanzato sistema di gestione di dati open-source
+PostgreSQL [7] è noto come il più avanzato sistema di gestione di dati open-source
 disponibile sul mercato.
 Si tratta di un DBMS (DataBase Management System), ossia di un vero e proprio insieme di componenti software in grado di permettere la creazione e la manipolazione di un database.
 \paragraph{}
@@ -173,7 +173,7 @@ Tutta la gestione massiva dei dati viene invece gestita attraverso il database n
 MongoDB.
 
 \paragraph{}
-MongoDB, invece, è un DBMS orientato alla gestione dei testi che ha come obiettivo quello di strutturare delle basi di dati testuali, in particolare con dati poco strutturati.
+MongoDB [8], invece, è un DBMS orientato alla gestione dei testi che ha come obiettivo quello di strutturare delle basi di dati testuali, in particolare con dati poco strutturati.
 Questo DBMS eredita il meccanismo di storage dal paradigma doc-oriented che consiste nel memorizzare ogni record come documento che non possiede caratteristiche predeterminate.
 Nei DB orientati ai documenti, si segue una metodologia differente rispetto al modello relazionale: si accorpano quanto più possibile gli oggetti, creando delle macro entità dal massimo contenuto informativo. Questi oggetti incorporano tutte le notizie di cui necessitano per una determinata semantica.
 Pertanto MongoDB non possiede uno schema e ogni documento non è strutturato, ha solo due chiavi obbligatorie:
@@ -188,7 +188,7 @@ MongoDB gestisce anche la ridondanza dei dati per rimediare a malfunzionamenti.
 Per evitare che lo sviluppatore acceda direttamente al database tramite linguaggio sql per PostgreSQL o tramite i metodi specifici per MongoDB,
 entra in gioco il framework Hibernate.
 
-Hibernate (talvolta abbreviato in H8) è una piattaforma middleware open source per lo sviluppo di applicazioni Java che fornisce un servizio di Object-relational mapping (ORM), ovvero che gestisce la rappresentazione e il mantenimento su database relazionale di un sistema di oggetti Java. Lo scopo principale di Hibernate è quello di fornire un mapping delle
+Hibernate [9] (talvolta abbreviato in H8) è una piattaforma middleware open source per lo sviluppo di applicazioni Java che fornisce un servizio di Object-relational mapping (ORM), ovvero che gestisce la rappresentazione e il mantenimento su database relazionale di un sistema di oggetti Java. Lo scopo principale di Hibernate è quello di fornire un mapping delle
 classi Java in tabelle di un database relazionale; sulla base di questo
 mapping Hibernate gestisce il salvataggio degli oggetti di tali classi su database. Si occupa inoltre del reperimento degli oggetti da database, producendo ed eseguendo automaticamente le query SQL necessarie al recupero delle informazioni e la successiva reistanziazione dell’oggetto precedentemente “ibernato” (mappato su database).
 Hibernate in pratica esonera lo sviluppatore dal lavoro inerente la persistenza dei dati.
@@ -217,7 +217,7 @@ applicazioni le cui risorse vengono caricate dinamicamente su richiesta, senza n
 ricaricare l’intera pagina, cosa particolarmente utile in una applicazione del tipo eSERVANT.
 \paragraph{}
 
-Le caratteristiche di Angular 2 sono:
+Le caratteristiche di Angular 2 sono [10]:
 
 \begin{itemize}
     \item  \textbf{mobile first}: uno degli obiettivi del nuovo Angular è di proporsi per lo
