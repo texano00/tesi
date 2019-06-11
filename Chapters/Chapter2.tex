@@ -1,19 +1,18 @@
 \chapter{Applicazione mobile}
 
+L’interfaccia della piattaforma eSERVANT verso gli utenti finali è come da progetto una APP per mobile.
+I due screenshot nella Figura 4 rappresentano, in ordine, la pagina di atterragio per gli utenti che
+non hanno ancora effettuato l'accesso e la home dove si radudano tutti gli eventi seguiti dall'utente.
+
+Per questo insieme a Sintra Consulting s.r.l. siamo andati a progettare in modo molto avanzato tutte le interfacce andando a quadrare requisiti di sistema/casi di uso con mockup montati all’interno di una vera e proprio demo dell’APP finale attesa.
+Tale strumento ci ha permesso di valutare non solo la user experience degli utenti, ma anche di poter fornire agli sviluppatori uno strumento specifico sul quale andare a traguardare la loro attività.
+
 \begin{figure}[htp]
     \centering  
     \caption{Screenshot applicazione mobile eServant}
     \subfloat[Login]{\includegraphics[scale=0.15]{img/cap2/1}}
     \subfloat[Home]{\includegraphics[scale=0.15]{img/cap2/2}}
 \end{figure}
-
-\paragraph{}
-L’interfaccia della piattaforma eSERVANT verso gli utenti finali è come da progetto una APP per mobile.
-I due screenshot nella figura 4 rappresentano, in ordine, la pagina di atterragio per gli utenti che
-non hanno ancora effettuato l'accesso e la home dove si radudano tutti gli eventi seguiti dall'utente.
-
-Per questo insieme a Sintra Consulting s.r.l. siamo andati a progettare in modo molto avanzato tutte le interfacce andando a quadrare requisiti di sistema/casi di uso con mockup montati all’interno di una vera e proprio demo dell’APP finale attesa.
-Tale strumento ci ha permesso di valutare non solo la user experience degli utenti, ma anche di poter fornire agli sviluppatori uno strumento specifico sul quale andare a traguardare la loro attività.
 
 Il prototipo di APP è quindi stato creato andando a realizzare dei mockup sui sei temi di fondo:
 \begin{itemize}
@@ -22,31 +21,34 @@ Il prototipo di APP è quindi stato creato andando a realizzare dei mockup sui s
 \item gestione delle funzioni di aiuto;
 \item gestione delle funzioni di mobilità;
 \item gestione delle funzioni di navigabilità e mappe;
-\item gestione del proprio profilo;
+\item gestione del proprio profilo.
 \end{itemize}
-
+\paragraph{}
+\paragraph{}
+\paragraph{}
 \section{Framework Ionic}
+
+Ionic è un HTML5 SDK lanciato nella sua prima versione nel 2013 e progettato per essere la base per lo sviluppo di app mobili ibride. 
+Sviluppare un'app mobile ibrida significa scrivere un unico code base per i due OS più diffusi: IOS e Android.
+
+Ionic viene distribuito come pacchetto installabile con npm, il package manager di Nodejs.
+Node.js è un ambiente di run-time JavaScript open-source e multipiattaforma che esegue codice JavaScript all'esterno di un browser, lato server per esempio.
+
 \begin{figure}[h!]
     \centering  
     \caption{Ionic framework [11]}
     \includegraphics[scale=0.4]{img/cap2/angular-ionic}
 \end{figure}
 
-Ionic è un HTML5 SDK lanciato nella sua prima versione nel 2013 e progettato per essere la base per lo sviluppo di app mobili ibride. 
-Sviluppare un'app mobile ibrida significa scrivere un unico code base per i due OS più famosi: IOS e Android.
-
-Ionic viene distribuito come pacchetto installabile con npm, il package manager di Nodejs.
-Node.js è un ambiente di run-time JavaScript open-source e multipiattaforma che esegue codice JavaScript all'esterno di un browser, lato server per esempio.
-
 Ionic si installa tramite CLI Linux come di seguito [12]
 \begin{lstlisting}
 npm install -g ionic
 \end{lstlisting}
 
-La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e SASS. Ciò consente la creazione di applicazioni mobili ricche di funzionalità che utilizzano esclusivamente tecnologie web come mostrato in figura 5.
+La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e SASS. Ciò consente la creazione di applicazioni mobili ricche di funzionalità che utilizzano esclusivamente tecnologie web come mostrato in Figura 5.
 \\\\
-\textbf{Cordova}\\
-\textit{Apache Cordova, ex-PhoneGap e futuro Capacitor}
+\textbf{Cordova}
+(\textit{Apache Cordova, ex-PhoneGap e futuro Capacitor})
 
 \begin{figure}[h!]
     \centering  
@@ -56,8 +58,8 @@ La struttura di Ionic è costituita da Angular, Apache Cordova (ex-PhoneGap) e S
 
 Apache Cordova è un framework di sviluppo di applicazioni mobili che può essere utilizzato per creare app mobili multipiattaforma usando HTML5 e puro JavaScript. 
 Per multipiattaforma intendiamo che il codice di un'applicazione può essere scritto una volta sola utilizzando HTML5 e JavaScript e può essere eseguito su diversi OS, come Android, iOS o Windows Mobile.
-La figura 6 raffigurara l'astrazione dell'implementazione nativa tramite l'uso di HTML, CSS e JS.
-Riporto di seguito un frammento di codice che permette di aprire la camera nativa del dispositivo mobile per scattare foto [14].
+La Figura 6 raffigurara l'astrazione dell'implementazione nativa tramite l'uso di HTML, CSS e JS.
+Riporto di seguito un frammento di codice che permette di aprire la fotocamera nativa del dispositivo mobile per scattare foto [14].
 \\
 \begin{lstlisting}
 ionic cordova plugin add cordova-plugin-camera
@@ -213,11 +215,11 @@ lo stato delle applicazioni client.
 Lo scopo principale di questo pattern è fornire uno stato dell'applicazione prevedibile, basato su tre principi principali [16].
 
 \begin{itemize}
-    \item \textbf{Unica sorgente di verità}: significa che l'intero stato dell'applicazione è memorizzato un un'unica struttura dati come mostrato in figura 9;
+    \item \textbf{Unica sorgente di verità}: significa che l'intero stato dell'applicazione è memorizzato un un'unica struttura dati come mostrato in Figura 9;
     \item \textbf{Lo stato è read only}: lo stato non viene mai cambiato direttamente, 
     solo tramite \textit{action}. Le \textit{action} descrivono cosa sta succedendo (possiamo vedere le action
-    come richieste di ottenimento dati, rimozione, aggiornamento stato). Possiamo notare questa immediata differenza confrontando la figura 7 con la figura 8;
-    \item \textbf{I cambiamenti sono fatti solo da funzioni pure}: quando un' \textit{action} viene lanciata, essa verrà
+    come richieste di ottenimento dati, rimozione, aggiornamento stato). Possiamo notare questa immediata differenza confrontando la Figura 7 con la Figura 8;
+    \item \textbf{I cambiamenti sono fatti solo da funzioni pure}: quando un'\textit{action} viene lanciata, essa verrà
     intercettata dai \textit{reducer}.
     Questi \textit{reducer} (sono solo funzioni pure) ricevono un'azione e lo stato, quindi a seconda dell'azione inviata 
     (di solito con un'istruzione switch), eseguono un'operazione e restituiscono un nuovo oggetto di stato. 
@@ -226,7 +228,7 @@ Lo scopo principale di questo pattern è fornire uno stato dell'applicazione pre
 \end{itemize}
 
 \paragraph{}
-Possiamo rendersi conto dei tre principi fondamentali sopra citati confrontando la figura 7 con la figura 8.
+Possiamo renderci conto dei tre principi fondamentali sopra citati confrontando la Figura 7 con la Figura 8.
 
 \begin{figure}[h!]
     \centering  
@@ -253,7 +255,7 @@ Al primo accesso all'APP eServant è necessario dare il consenso per almeno uno 
 \begin{itemize}
 \item Facebook;
 \item Instagram;
-\item Twitter;
+\item Twitter.
 \end{itemize}
 
 Altrimenti viene data la possibilità di fare un accesso privato tramite username e password.
@@ -271,7 +273,7 @@ Questa specifica sostituisce il protocollo OAuth 1.0 descritto in RFC 5849.
 
 \paragraph{}
 
-Vediamo quali sono gli \textbf{Attori} coinvolti nel protocollo OAuth2.0 mostrato in figura 10 [18].
+Vediamo quali sono gli \textbf{Attori} coinvolti nel protocollo OAuth2.0 [18] mostrato in Figura 10.
 
 \begin{itemize}
 \item \textit{resource owner}: un'entità in grado di approvare l'accesso a una risorsa protetta;
@@ -282,7 +284,7 @@ e rispondere alle richieste di risorse protette utilizzando i token di accesso;
 \item \textit{client}: un'applicazione che fa richieste di risorse protette per conto del
 proprietario delle risorse e con la sua autorizzazione. Il termine "client"
 non implica particolari caratteristiche di implementazione (l'applicazione può essere eseguita
-su un server, un client web o altri dispositivi);
+su un server, un client web o altri dispositivi).
 \end{itemize}
 
 
@@ -307,7 +309,7 @@ Frammento di codice dell'app Ionic per includere le mappe:
 
 \paragraph{}
 Il frammento indicato sopra permette tramite una singola linea di codice
-di includere le mappe e ottenre il risultato come da screenshot in figura 11.
+di includere le mappe e ottenre il risultato come da screenshot in Figura 11.
 \begin{figure}[htp]
     \centering  
     \caption{Mappe nell'app eServant}
@@ -331,12 +333,12 @@ In ordine di priorità di affidabilità decrescente, troviamo:
 \begin{itemize}
     \item QRcode manuale;
     \item GPS;
-    \item iBeacon;
+    \item iBeacon.
 \end{itemize}
 
 
 È possibile vedere il risultato della geolocalizzazione nelle mappe
-nella figura 12.
+nella Figura 12.
 \begin{figure}[H]
     \caption{Localizzazione nelle mappe}
     \centering  
@@ -350,14 +352,14 @@ nella figura 12.
     \caption{QRcode}
     \includegraphics[scale=1]{img/cap2/barcode-qrcode}
 \end{figure}
-I codici QR (esempio in figura 13) sono stati creati nel 1994 da Denso Wave [19], una filiale giapponese del Gruppo Toyota.
+I codici QR (esempio in Figura 13) sono stati creati nel 1994 da Denso Wave [19], una filiale giapponese del Gruppo Toyota.
 L'uso di questa tecnologia è ora gratuito. Il QR Code non è l'unico codice a barre bidimensionale 
 sul mercato, un altro esempio è il codice Data Matrix.
 \\
 Un codice QR è un codice a barre quadrato bidimensionale che può memorizzare dati codificati. 
 Il più delle volte i dati sono un link a un sito web (URL).
 
-Nel caso di eServant il codice QRcode racchiude un identificativo di un POI. \\
+Nel caso di eServant il codice QRcode racchiude un identificativo di un POI. \\ \\
 Vediamo le fasi del processo di geolocalizzazione tramite QRcode:
 
 \begin{enumerate}
@@ -385,16 +387,18 @@ Vediamo le fasi del processo di geolocalizzazione tramite QRcode:
 \subsection{A-GPS}
 
 Tramite GPS assistito (A-GPS) la localizzazione del partecipante all'evento è automatica,
-a patto che il GPS del dispositivo mobile sia abilitato.\\
+a patto che il GPS del dispositivo mobile sia abilitato. 
+
 La tecnologia GPS assistito permette di acquisire segnale satellitare in maniera più rapida
-rispetto al GPS tradizionale.\\
+rispetto al GPS tradizionale.
+
 Tramite rete dati cellulare vengono indicate al dispositivo mobile le posizioni previste dei
-satelliti GPS come mostrato in figura 14. In questo modo, il dispositivo sa dove cercare i satelliti ed è in grado di acquisirne 
+satelliti GPS come mostrato in Figura 14. In questo modo, il dispositivo sa dove cercare i satelliti ed è in grado di acquisirne 
 i segnali in pochi secondi, anche in condizioni difficili.
 \begin{figure}[H]
     \centering  
     \caption{Comunicazione A-GPS [21]}
-    \includegraphics[scale=0.7]{img/cap2/gps}
+    \includegraphics[scale=0.95]{img/cap2/gps}
 \end{figure}
 Vediamo un frammento di codice per ottenere in tempo reale la 
 posizione del dispositivo tramite A-GPS [22].
@@ -438,7 +442,7 @@ connessione corta che scandisce i tempi, affidabilità e sicurezza.
 BLE consuma da 10 a 20 volte meno energia (e 1000 volte meno del Wi-Fi), e può trasmettere
 dati con velocità 50 volte superiore rispetto al Bluetooth classico. 
 
-Un esempio di dispositivo iBeacon è mostrato in figura 15.\\
+Un esempio di dispositivo iBeacon è mostrato in Figura 15.\\
 Lato client (Ionic), il plugin cordova IBeacon mette a disposizione due principali metodi
 che permettono di intercettare due eventi:
 
@@ -447,7 +451,7 @@ che permettono di intercettare due eventi:
     \item Dispositivo mobile uscito dal raggio dell'ibeacon;
 \end{itemize}
 
-La figura 16 mostra un dispositivo mobile entrato nel raggio di quattro iBeacon.
+La Figura 16 mostra un dispositivo mobile entrato nel raggio di quattro iBeacon.
 \begin{figure}[H]
     \centering  
     \caption{Prossimità tramite iBeacon [25]}
@@ -507,7 +511,7 @@ Introduciamo 2 concetti principali su cui si basa il motore NLP:
 cambiano solo i valori degli slot.
 \end{itemize}
 
-Vediamo nel caso specifico di eServant rappresentato dagli screenshot in figura 17.
+Vediamo nel caso specifico di eServant rappresentato dagli screenshot in Figura 17.
 
 \textit{Vorrei \textcolor{green}{raggiungere il punto di interesse} \textcolor{purple}{Aula Magna}}\\
 Analisi tramite NLP:
@@ -542,7 +546,7 @@ Analisi tramite NLP:
 \end{figure}
 
 
-Come si nota dal flow decisionale in figura 18, la prima domanda che ci siamo posti è stata se volevamo fare il deploy del
+Come si nota dal flow decisionale in Figura 18, la prima domanda che ci siamo posti è stata se volevamo fare il deploy del
 chatbot su cloud oppure in-house.\\
 
 \subsection{Implementazione}

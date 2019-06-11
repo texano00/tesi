@@ -1,17 +1,12 @@
 \chapter{eServant}
 
-\section{Panoramica}
 eServant [1] è un progetto di ricerca cofinanziato con fondi POR-CReO FESR 2014 - 2020 - Bandi per aiuti agli investimenti in ricerca, sviluppo e innovazione RSI. QUID Informatica S.p.A è Capofila di un raggruppamento di Aziende ed Organismi di ricerca finalizzato alla realizzazione del progetto.
-\paragraph{}
 
-Il focus del progetto è la gestione innovativa dei processi collegati ai grandi eventi (musicali, sportivi, del tempo libero o del lavoro) che hanno luogo all’interno di impianti e strutture, sia in termini di comunicazione e controllo, sia in termini di servizi innovativi per gli spettatori/utenti, andando a disegnare un progetto di impianto intelligente, inserito all’interno di una struttura di città intelligente, costruita per un cittadino consapevole, che valorizzi i temi della responsabilità sociale e civile e  della sostenibilità.
-\paragraph{}
+Il focus del progetto è la gestione innovativa dei processi collegati ai grandi eventi (musicali, sportivi, del tempo libero o del lavoro) che hanno luogo all’interno di impianti e strutture, sia in termini di comunicazione e controllo, sia in termini di servizi innovativi per gli spettatori/utenti. Lo scopo è progettare un impianto intelligente, inserito all’interno di una struttura di città intelligente, costruita per un cittadino consapevole, che valorizzi i temi della responsabilità sociale e civile e  della sostenibilità.
 
 Si tratta quindi di un insieme di processi, che sono gestiti in modo assolutamente innovativo, sino a creare un processo evoluto, costituito dalla piattaforma eServant, che viene industrializzato in una struttura hardware e software altamente replicabile.
-\paragraph{}
 
-L’obiettivo operativo è quindi quello di progettare un modello di centro-servizi per la produzione, il controllo e la distribuzione di contenuti all’interno di grandi impianti, sportivi e non, in occasione di eventi specifici come mostrato nella Figura 1.
-\paragraph{}
+L’obiettivo operativo è quindi quello di progettare un modello di centro-servizi per la produzione, il controllo e la distribuzione di contenuti all’interno di grandi impianti, sportivi e non, in occasione di eventi specifici, come mostrato nella Figura 1.
 
 Il concetto di impianto al quale presta i suoi servizi il progetto eServant è molto ampio.
 Ci sono nel settore dello sport in Italia circa 150.000 impianti sportivi, di tutte le taglie. Ci sono gli impianti per il teatro (1.162), i centri commerciali, retail park e factory outlet (956), migliaia di punti vendita della GDO, oltre 200 parchi nella sola Toscana, i comuni con decine di migliaia tra centri storici, aree monumentali, aree archeologiche, complessi monumentali e luoghi della cultura, oltre 57.000 plessi scolastici ed un numero incalcolabile di luoghi ove si esprime la socialità [2].
@@ -20,7 +15,6 @@ tante persone
 raccolte in un unico spazio
 all’interno del quale condividono un comune interesse.
 È questo un tipo di contesto non esplorato, al quale il progetto eServant prova a dare delle risposte e dei servizi mirati.
-\paragraph{}
 
 La sperimentazione del progetto eServant si è svolta presso l’impianto universitario PIN a Prato nel mese di Dicembre 2018.
 \paragraph{}
@@ -59,15 +53,15 @@ Il dipartimento Ingegneria dell’informazione e Scienze Matematiche di Siena è
     \caption{Casi d'uso eServant}
     \includegraphics[scale=0.5]{img/cap1/casidiuso}
 \end{figure}
-La figura 2 descrive le funzioni e servizi offerti dal progetto eServant e percepiti dagli attori che interagiscono col sistema stesso [3].
+La Figura 2 descrive le funzioni e servizi offerti dal progetto eServant e percepiti dagli attori che interagiscono col sistema stesso [3].
 \\\\\\\\Gli attori coinvolti nelle funzioni di eServant sono due:
 \begin{itemize}
     \item proprietario impianto;
-    \item partecipante eventi;
+    \item partecipante eventi.
 \end{itemize}
 
 Il proprietario dell'impianto gestisce gli eventi nella propria struttura, potendo nello specifico attivare servizi specifici e schedularne l'agenda.
-Come vediamo dalla figura 2 la funzione per schedulare l'agenda è inclusa anche nella creazione delle news riguardanti l'evento specifico o a
+Come vediamo dalla Figura 2, la funzione per schedulare l'agenda è inclusa anche nella creazione delle news riguardanti l'evento specifico o a
 carattere generico dell'impianto.
 Infine il proprietario dell'impianto può monitorare la propria struttura grazie a sensori IoT e mettersi in cotatto con i partecipanti tramite notifiche push.
 
@@ -75,7 +69,7 @@ L'attore "Partecipante Eventi" invece, fruisce di tutti quei servizi configurati
 i relativi dettagli.
 
 \section{Back-end}
-OSGI (Open Service Gateway Initiative)[4] è  è una specifica che permette di costruire
+OSGI (Open Service Gateway Initiative) [4] è  è una specifica che permette di costruire
 applicazioni modulari a componenti (detti “bundle”) e che introduce una
 programmazione Service Oriented, permettendo una separazione tra interfaccia ed
 implementazione molto più rigorosa di quella nativa Java.
@@ -102,10 +96,10 @@ progetto.
 \begin{figure}[h!]
     \centering  
     \caption{Architettura}
-    \includegraphics[scale=0.5]{img/cap1/architecture}
+    \includegraphics[scale=0.6]{img/cap1/architecture}
 \end{figure}
 
-Dalla figura 3 vediamo qual'è il flusso di una richiesta proveniente dall'utente fruitore del backoffice web o
+Dalla Figura 3 vediamo qual è il flusso di una richiesta proveniente dall'utente fruitore del backoffice web o
 dell'applicazione mobile.
 Tutte le richieste HTTPS vengono intercettate prima di tutto dall'identity server che verifica tramite JWT token
 se l'utente è autorizzato a ottenere le risorse richieste.
@@ -113,7 +107,7 @@ Successivamente, le richieste vengono smistate al corretto microservizio special
 Visto che i microservizi sono progettati per avere più repliche, il balancer permette di astrarle e bilanciare correttamente
 il carico di lavoro.
 
-Ogni microservizio, come da figura 3, se necessario ha internamente un proprio database
+Ogni microservizio, come da Figura 3, se necessario ha internamente un proprio database
 che nessun'altro oltre a lui può accederci.
 
 L'ultima parte, quella delle risorse esterne, rappresenta tutti servizi fuori dalla rete
@@ -141,16 +135,16 @@ generare il componente backend con le rotte http e la validazione degli input, s
     reale;
     \item Swagger Codegen: è lo strumento che crea ed abilitata le varie applicazioni al
     consumo delle API utilizzabili su una molteplicità di linguaggi di sviluppo (Java,
-    Javascript Perl, PHP, Python, Ruby, Scala;
+    Javascript Perl, PHP, Python, Ruby, Scala);
     \item Swagger UI: è lo strumento che permette con un tool visuale il
-    consumo delle API da parte delle varie applicazioni;
+    consumo delle API da parte delle varie applicazioni.
 \end{enumerate}
 
 
 \paragraph{}
 
-Per tutti i motivi indicati Swagger viene adottato all’interno dell’architettura di
-eSERVANT, come strumento per lo sviluppo delle varie API di interfacciamento verso
+Per tutti i motivi indicati, Swagger viene adottato all’interno dell’architettura di
+eSERVANT come strumento per lo sviluppo delle varie API di interfacciamento verso
 la applicazioni dei partner.
 
 
@@ -217,7 +211,7 @@ applicazioni le cui risorse vengono caricate dinamicamente su richiesta, senza n
 ricaricare l’intera pagina, cosa particolarmente utile in una applicazione del tipo eSERVANT.
 \paragraph{}
 
-Le caratteristiche di Angular 2 sono [10]:
+Le caratteristiche di Angular 2 [10] sono:
 
 \begin{itemize}
     \item  \textbf{mobile first}: uno degli obiettivi del nuovo Angular è di proporsi per lo
@@ -234,7 +228,7 @@ Le caratteristiche di Angular 2 sono [10]:
     sviluppati in proprio;
     \item \textbf{prestazioni}: un’attenzione particolare è stata posta sulle prestazioni del
     framework e sulla riduzione dei tempi di caricamento e boostrapping delle
-    applicazioni;
+    applicazioni.
 \end{itemize}
 
 Per tutti i motivi indicati Angular 2 viene adottato all’interno dell’architettura di
